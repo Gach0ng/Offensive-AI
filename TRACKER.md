@@ -72,7 +72,7 @@
 | [`Team-Atlanta/aixcc-afc-atlantis`](https://github.com/Team-Atlanta/aixcc-afc-atlantis) | `repos/aixcc/aixcc-afc-atlantis` | ✅ | 未开始 |  |
 | [`theori-io/aixcc-afc-archive`](https://github.com/theori-io/aixcc-afc-archive) | `repos/aixcc/aixcc-afc-archive` | ✅ | 未开始 |  |
 | [`o2lab/afc-crs-all-you-need-is-a-fuzzing-brain`](https://github.com/o2lab/afc-crs-all-you-need-is-a-fuzzing-brain) | `repos/aixcc/afc-crs-all-you-need-is-a-fuzzing-brain` | ✅ | 未开始 |  |
-| [`shellphish/artiphishell`](https://github.com/shellphish/artiphishell) | `repos/aixcc/artiphishell` | ✅ | 未开始 |  |
+| [`shellphish/artiphishell`](https://github.com/shellphish/artiphishell) | `repos/aixcc/artiphishell` | ✅ | 已完成 | [docs/audits/shellphish-artiphishell.md](docs/audits/shellphish-artiphishell.md) |
 | [`42-b3yond-6ug/42-b3yond-6ug-crs`](https://github.com/42-b3yond-6ug/42-b3yond-6ug-crs) | `repos/aixcc/42-b3yond-6ug-crs` | ✅ | 未开始 |  |
 | [`siftech/afc-crs-lacrosse`](https://github.com/siftech/afc-crs-lacrosse) | `repos/aixcc/afc-crs-lacrosse` | ✅ | 未开始 |  |
 
