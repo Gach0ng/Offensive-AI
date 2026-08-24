@@ -140,7 +140,7 @@
 | [`mickyhq/qwythos`](https://github.com/mickyhq/qwythos) | `repos/models-code/qwythos` | ✅ | 未开始 |  |
 | [`facebookresearch/Meta_SecAlign`](https://github.com/facebookresearch/Meta_SecAlign) | `repos/models-code/Meta_SecAlign` | ✅ | 未开始 |  |
 
-## 九、上游索引（landscape）
+## 九、索引源（landscape）
 
 | 仓库 | 本地路径 | 克隆 | 审计 | 审计文档 |
 |------|---------|:----:|:----:|---------|

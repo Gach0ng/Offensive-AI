@@ -1,7 +1,7 @@
 # 克隆清单：类别|org/repo（# 开头为注释行）
-# 来源：Yeti-791/Awesome-Offensive-AI-Agentic-Landscape（快照 2026-08-23）
+# 快照日期：2026-08-23
 
-# ── 上游 landscape 本体（用于 git pull 持久同步）──
+# ── 索引源仓库（用于 git pull 持久同步）──
 landscape|Yeti-791/Awesome-Offensive-AI-Agentic-Landscape
 
 # ── 主列表：开源 Agent 项目（56，按 Star 降序）──

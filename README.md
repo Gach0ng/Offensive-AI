@@ -2,10 +2,9 @@
 
 > 持久更新的进攻型 AI / Agent 研究仓库：跟踪业界全景 → 收集源码 → 逐项目深度代码审计 → 沉淀实现思路文档。
 >
-> **项目主页**：https://github.com/Gach0ng/Offensive-AI（本仓库所有审计产出在此发布；`repos/` 下的第三方源码不入库，按 `scripts/repos.list` 可随时重建）
+> **项目主页**：https://github.com/Gach0ng/Offensive-AI
 
-**上游索引来源**：[Yeti-791/Awesome-Offensive-AI-Agentic-Landscape](https://github.com/Yeti-791/Awesome-Offensive-AI-Agentic-Landscape)
-（本地快照：`docs/landscape/Awesome-Offensive-AI-Agentic-Landscape@2026-08-23.md`，更新上游后重新拷贝一份新快照即可）
+**索引快照**：`docs/landscape/`（按日期归档，仅本地保留；索引源仓库位于 `repos/landscape/`，`git pull` 后与最新快照 diff 即可发现新增项目）
 
 ## 项目目标
 
@@ -43,7 +42,7 @@ Offensive-AI/
 
 ## 工作流
 
-### 1. 同步上游 landscape（持久更新入口）
+### 1. 同步索引源（持久更新入口）
 
 ```bash
 cd repos/landscape && git pull

@@ -53,7 +53,7 @@ gen_section() { # $1=标题 $2=类别
   gen_section "六、研究代码（research）" "research"
   gen_section "七、Awesome 清单（awesome-lists）" "awesome-lists"
   gen_section "八、模型配套代码（models-code）" "models-code"
-  gen_section "九、上游索引（landscape）" "landscape"
+  gen_section "九、索引源（landscape）" "landscape"
 } > "$TRACKER"
 
 total=$(grep -cE '^[a-z-]+\|' "$LIST")

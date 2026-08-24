@@ -1,8 +1,7 @@
 # 进攻型 AI / Agentic 全景 —— 开源项目地址索引
 
-> **来源**：[Yeti-791/Awesome-Offensive-AI-Agentic-Landscape](https://github.com/Yeti-791/Awesome-Offensive-AI-Agentic-Landscape)
-> **快照日期**：2026-08-23（原列表数据采集时点 2026-07-20）｜ **本地源码**：`repos/<类别>/<仓库名>/`
-> **完整原文**（含 73 篇论文详情、商业产品细节）：`docs/landscape/Awesome-Offensive-AI-Agentic-Landscape@2026-08-23.md`
+> **快照日期**：2026-08-23（数据采集时点 2026-07-20）｜ **本地源码**：`repos/<类别>/<仓库名>/`
+> **完整原文**（含 73 篇论文详情、商业产品细节）：本地 `docs/landscape/` 快照（仅本地保留，未入库）
 >
 > 本索引登记所有 GitHub 仓库地址（克隆与审计对象），并附模型权重、论文、非 GitHub 资源的链接。
 > 审计进度见根目录 `TRACKER.md`。
@@ -260,4 +259,4 @@
 
 ---
 
-*维护说明：上游 landscape 更新后，同步 `scripts/repos.list` 并在本文件追加/修改对应条目；克隆状态与审计进度统一登记在根目录 `TRACKER.md`。*
+*维护说明：索引源更新后（`repos/landscape` 内 `git pull`），同步 `scripts/repos.list` 并在本文件追加/修改对应条目；克隆状态与审计进度统一登记在根目录 `TRACKER.md`。*
