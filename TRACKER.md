@@ -13,7 +13,7 @@
 | [`promptfoo/promptfoo`](https://github.com/promptfoo/promptfoo) | `repos/agents/promptfoo` | ✅ | 未开始 |  |
 | [`vxcontrol/pentagi`](https://github.com/vxcontrol/pentagi) | `repos/agents/pentagi` | ✅ | 已完成 | [docs/audits/vxcontrol-pentagi.md](docs/audits/vxcontrol-pentagi.md) |
 | [`GreyDGL/PentestGPT`](https://github.com/GreyDGL/PentestGPT) | `repos/agents/PentestGPT` | ✅ | 已完成 | [docs/audits/GreyDGL-PentestGPT.md](docs/audits/GreyDGL-PentestGPT.md) |
-| [`0x4m4/hexstrike-ai`](https://github.com/0x4m4/hexstrike-ai) | `repos/agents/hexstrike-ai` | ✅ | 未开始 |  |
+| [`0x4m4/hexstrike-ai`](https://github.com/0x4m4/hexstrike-ai) | `repos/agents/hexstrike-ai` | ✅ | 已完成 | [docs/audits/0x4m4-hexstrike-ai.md](docs/audits/0x4m4-hexstrike-ai.md) |
 | [`aliasrobotics/cai`](https://github.com/aliasrobotics/cai) | `repos/agents/cai` | ✅ | 已完成 | [docs/audits/aliasrobotics-cai.md](docs/audits/aliasrobotics-cai.md) |
 | [`NVIDIA/garak`](https://github.com/NVIDIA/garak) | `repos/agents/garak` | ✅ | 未开始 |  |
 | [`OWASP/Nettacker`](https://github.com/OWASP/Nettacker) | `repos/agents/Nettacker` | ✅ | 未开始 |  |
