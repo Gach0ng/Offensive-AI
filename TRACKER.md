@@ -9,7 +9,7 @@
 | 仓库 | 本地路径 | 克隆 | 审计 | 审计文档 |
 |------|---------|:----:|:----:|---------|
 | [`KeygraphHQ/shannon`](https://github.com/KeygraphHQ/shannon) | `repos/agents/shannon` | ✅ | 已完成 | [docs/audits/KeygraphHQ-shannon.md](docs/audits/KeygraphHQ-shannon.md) |
-| [`usestrix/strix`](https://github.com/usestrix/strix) | `repos/agents/strix` | ✅ | 未开始 |  |
+| [`usestrix/strix`](https://github.com/usestrix/strix) | `repos/agents/strix` | ✅ | 已完成 | [docs/audits/usestrix-strix.md](docs/audits/usestrix-strix.md) |
 | [`promptfoo/promptfoo`](https://github.com/promptfoo/promptfoo) | `repos/agents/promptfoo` | ✅ | 未开始 |  |
 | [`vxcontrol/pentagi`](https://github.com/vxcontrol/pentagi) | `repos/agents/pentagi` | ✅ | 未开始 |  |
 | [`GreyDGL/PentestGPT`](https://github.com/GreyDGL/PentestGPT) | `repos/agents/PentestGPT` | ✅ | 未开始 |  |
