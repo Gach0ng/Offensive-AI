@@ -15,7 +15,7 @@
 | [`GreyDGL/PentestGPT`](https://github.com/GreyDGL/PentestGPT) | `repos/agents/PentestGPT` | ✅ | 已完成 | [docs/audits/GreyDGL-PentestGPT.md](docs/audits/GreyDGL-PentestGPT.md) |
 | [`0x4m4/hexstrike-ai`](https://github.com/0x4m4/hexstrike-ai) | `repos/agents/hexstrike-ai` | ✅ | 已完成 | [docs/audits/0x4m4-hexstrike-ai.md](docs/audits/0x4m4-hexstrike-ai.md) |
 | [`aliasrobotics/cai`](https://github.com/aliasrobotics/cai) | `repos/agents/cai` | ✅ | 已完成 | [docs/audits/aliasrobotics-cai.md](docs/audits/aliasrobotics-cai.md) |
-| [`NVIDIA/garak`](https://github.com/NVIDIA/garak) | `repos/agents/garak` | ✅ | 未开始 |  |
+| [`NVIDIA/garak`](https://github.com/NVIDIA/garak) | `repos/agents/garak` | ✅ | 已完成 | [docs/audits/NVIDIA-garak.md](docs/audits/NVIDIA-garak.md) |
 | [`OWASP/Nettacker`](https://github.com/OWASP/Nettacker) | `repos/agents/Nettacker` | ✅ | 未开始 |  |
 | [`Ed1s0nZ/CyberStrikeAI`](https://github.com/Ed1s0nZ/CyberStrikeAI) | `repos/agents/CyberStrikeAI` | ✅ | 未开始 |  |
 | [`elder-plinius/T3MP3ST`](https://github.com/elder-plinius/T3MP3ST) | `repos/agents/T3MP3ST` | ✅ | 未开始 |  |
