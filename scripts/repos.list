@@ -1,0 +1,117 @@
+# 克隆清单：类别|org/repo（# 开头为注释行）
+# 来源：Yeti-791/Awesome-Offensive-AI-Agentic-Landscape（快照 2026-08-23）
+
+# ── 上游 landscape 本体（用于 git pull 持久同步）──
+landscape|Yeti-791/Awesome-Offensive-AI-Agentic-Landscape
+
+# ── 主列表：开源 Agent 项目（56，按 Star 降序）──
+agents|KeygraphHQ/shannon
+agents|usestrix/strix
+agents|promptfoo/promptfoo
+agents|vxcontrol/pentagi
+agents|GreyDGL/PentestGPT
+agents|0x4m4/hexstrike-ai
+agents|aliasrobotics/cai
+agents|NVIDIA/garak
+agents|OWASP/Nettacker
+agents|Ed1s0nZ/CyberStrikeAI
+agents|elder-plinius/T3MP3ST
+agents|microsoft/PyRIT
+agents|GH05TCREW/pentestagent
+agents|protectai/vulnhuntr
+agents|samugit83/redamon
+agents|confident-ai/deepteam
+agents|Armur-Ai/Pentest-Swarm-AI
+agents|0xSteph/pentest-ai-agents
+agents|oritera/Cairn
+agents|msoedov/agentic_security
+agents|zakirkun/guardian-cli
+agents|trailofbits/buttercup
+agents|Gowtham-Darkseid/AutoPentestX
+agents|0xSteph/pentest-ai
+agents|utkusen/promptmap
+agents|CyberStrikeus/CyberStrike
+agents|ipa-lab/hackingBuddyGPT
+agents|bugbasesecurity/pentest-copilot
+agents|berylliumsec/nebula
+agents|SanMuzZzZz/LuaN1aoAgent
+agents|splx-ai/agentic-radar
+agents|ghostsecurity/reaper
+agents|PentesterFlow/agent
+agents|xalgord/xalgorix
+agents|ASCIT31/Dark-Moon
+agents|verialabs/ctf-agent
+agents|westonbrown/Cyber-AutoAgent
+agents|crond-jaist/AutoPentest-DRL
+agents|0ca/BoxPwnr
+agents|ARCANGEL0/EVA
+agents|m-sec-org/BreachWeave
+agents|SHAdd0WTAka/Zen-Ai-Pentest
+agents|transilienceai/communitytools
+agents|aielte-research/HackSynth
+agents|simon-p-j-r/LLM4Pentest
+agents|xoxruns/deadend-cli
+agents|yz9yt/BugTrace-AI
+agents|GitHubSecurityLab/seclab-taskflow-agent
+agents|KHenryAegis/VulnBot
+agents|chainreactors/tinyctfer
+agents|NYU-LLM-CTF/nyuctf_agents
+agents|antoninoLorenzo/AI-OPS
+agents|andreashappe/cochise
+agents|arthurgervais/mapta
+agents|vikramrajkumarmajji/AI-VAPT
+agents|amazon-science/Cyber-Zero
+
+# ── DARPA AIxCC 2025 决赛 CRS（buttercup 已在 agents/）──
+aixcc|Team-Atlanta/aixcc-afc-atlantis
+aixcc|theori-io/aixcc-afc-archive
+aixcc|o2lab/afc-crs-all-you-need-is-a-fuzzing-brain
+aixcc|shellphish/artiphishell
+aixcc|42-b3yond-6ug/42-b3yond-6ug-crs
+aixcc|siftech/afc-crs-lacrosse
+
+# ── 进攻型 AI Skill 库 ──
+skills|mukul975/Anthropic-Cybersecurity-Skills
+skills|ljagiello/ctf-skills
+skills|Eyadkelleh/awesome-skills-security
+
+# ── 安全工具类 MCP Server ──
+mcp|PortSwigger/mcp-server
+mcp|Wh0am123/MCP-Kali-Server
+mcp|FuzzingLabs/mcp-security-hub
+mcp|GH05TCREW/MetasploitMCP
+mcp|MorDavid/BloodHound-MCP-AI
+mcp|BurtTheCoder/mcp-shodan
+mcp|DMontgomery40/pentest-mcp
+
+# ── Agent 能力评测 Benchmark 仓库 ──
+benchmarks|meta-llama/PurpleLlama
+benchmarks|xbow-engineering/validation-benchmarks
+benchmarks|sunblaze-ucb/cybergym
+benchmarks|andyzorigin/cybench
+benchmarks|princeton-nlp/intercode
+benchmarks|NYU-LLM-CTF/NYU_CTF_Bench
+benchmarks|lucagioacchini/auto-pen-bench
+benchmarks|UKGovernmentBEIS/inspect_cyber
+benchmarks|uiuc-kang-lab/cve-bench
+benchmarks|SEC-bench/SEC-bench
+benchmarks|NYU-LLM-CTF/CTFTiny
+
+# ── 论文配套 / 研究代码 ──
+research|ucsb-mlsec/VulnLLM-R
+research|AI-secure/UDora
+research|Yeti-791/Tsec-Hackathon
+
+# ── 其他 Awesome 清单（交叉参考）──
+awesome-lists|fr0gger/Awesome-GPT-Agents
+awesome-lists|jiep/offensive-ai-compilation
+awesome-lists|ottosulin/awesome-ai-security
+awesome-lists|TalEliyahu/Awesome-AI-Security
+awesome-lists|raphabot/awesome-cybersecurity-agentic-ai
+awesome-lists|EvanThomasLuke/Awesome-AI-Hacking-Agents
+awesome-lists|ox01024/awesome-offensive-security-ai
+awesome-lists|gmh5225/awesome-ai-security
+
+# ── 模型配套代码仓库（权重在 HuggingFace/Ollama）──
+models-code|mickyhq/qwythos
+models-code|facebookresearch/Meta_SecAlign
