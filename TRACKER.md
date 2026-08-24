@@ -29,7 +29,7 @@
 | [`oritera/Cairn`](https://github.com/oritera/Cairn) | `repos/agents/Cairn` | ✅ | 未开始 |  |
 | [`msoedov/agentic_security`](https://github.com/msoedov/agentic_security) | `repos/agents/agentic_security` | ✅ | 未开始 |  |
 | [`zakirkun/guardian-cli`](https://github.com/zakirkun/guardian-cli) | `repos/agents/guardian-cli` | ✅ | 未开始 |  |
-| [`trailofbits/buttercup`](https://github.com/trailofbits/buttercup) | `repos/agents/buttercup` | ✅ | 未开始 |  |
+| [`trailofbits/buttercup`](https://github.com/trailofbits/buttercup) | `repos/agents/buttercup` | ✅ | 已完成 | [docs/audits/trailofbits-buttercup.md](docs/audits/trailofbits-buttercup.md) |
 | [`Gowtham-Darkseid/AutoPentestX`](https://github.com/Gowtham-Darkseid/AutoPentestX) | `repos/agents/AutoPentestX` | ✅ | 未开始 |  |
 | [`0xSteph/pentest-ai`](https://github.com/0xSteph/pentest-ai) | `repos/agents/pentest-ai` | ✅ | 未开始 |  |
 | [`utkusen/promptmap`](https://github.com/utkusen/promptmap) | `repos/agents/promptmap` | ✅ | 未开始 |  |
