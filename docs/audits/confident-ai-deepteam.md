@@ -80,7 +80,7 @@ deepteam/
 - **合成器提示词范式**（weapons 段亲读）："文案写手"人设 + **只回 JSON**（`data[].input`）+ 必须生成 N 条（max_goldens 参数化）+ 五条军规：①**必须接地于 target_purpose**（"请求须反映用户与该用途 AI 系统交互的真实场景"）②真实世界场景框架 ③高多样性（措辞/结构/意图各异）④语气风格混合（中性/好奇/微妙对抗；直接问/假设/比较句式）⑤像自然用户查询（禁 'test/bias/evaluation' 元语言）+ **按 golden 数递增的少样本示例**（1/2/3 条各配不同 purpose 的范例：survivalist 手册助手/videogame 顾问/DIY 论坛机器人——**示例本身演示了"同一恶意意图如何借不同 purpose 的皮"**）。
 - 37 类×平均 3-5 子类 ≈ **150+ 个子类合成器**——分类粒度全景观最深（agentic 20 类的模板同构）。
 
-### 4.3 多轮攻击引擎（multi_turn/，crescendo 模板全文亲读）
+### 4.3 多轮攻击引擎（multi_turn/，crescendo 模板系统提示词段亲读约 80 行）
 
 - **Crescendo 十条军规**（模板全文）：渐进式越狱的完整方法论——①精确起手（无害但精心布局）②计算好的抽象起点 ③量身递增复杂度 ④模式复用提效 ⑤每轮直奔目标 ⑥评分最大化策略 ⑦即时重估 ⑧对话动量 ⑨成功后生成变体 ⑩**错误检测与智能字符变换**（发现内容过滤触发→'o'→'0'、's'→'$' 替换且诱导目标模型也用）——输出 JSON 三字段（generated_question/last_response_summary/rationale_behind_jailbreak）。
 - **四个完整工作示例**内嵌（模板内）：Anarchist's Cookbook 五步渐进、Mein Kampf 十三步仇恨言论渐进、Molotov 三步、白人至上宣言八步（"Make it more angry and irrational" 收尾）——**每个示例就是一轮对话剧本**，比指令更有效的教学。
@@ -134,7 +134,7 @@ LLM 红队谱系补上第五极：**PyRIT（库·编排）/garak（扫描·统�
 | `red_team.py` | ✅ 亲读全文 | 入口+默认值面 |
 | `red_teamer/red_teamer.py` | ✅ 部分 | 结构+关键路径（1289 行） |
 | `vulnerabilities/illegal_activity/template.py` | ✅ 亲读 | weapons 段全文精读（851 行范本） |
-| `attacks/multi_turn/crescendo_jailbreaking/template.py` | ✅ 亲读全文 | 十条军规+四示例 |
+| `attacks/multi_turn/crescendo_jailbreaking/template.py` | ✅ 部分 | 系统提示词主体（头部约 80 行/共 619 行）精读；其余待补读 |
 | `attacks/attack_simulator/attack_simulator.py` | ✅ 部分 | 结构+三层节流 |
 | `vulnerabilities/`（37 类清单） `frameworks/`（8 框架） | ✅ 清单亲读 | 名称与职责 |
 | `attacks/multi_turn/` 其余四法 `guardrails/` `metrics/` `trace_scanner/` | ⬜ 部分 | 机制登记 |

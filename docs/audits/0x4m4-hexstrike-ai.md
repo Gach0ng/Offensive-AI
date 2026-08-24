@@ -2,7 +2,7 @@
 
 > 审计对象：HexStrike AI MCP Agents v6.0 —— 自称 "AI-Powered MCP Cybersecurity Automation Platform"（150+ 工具 / 12+ agent），实为**规则引擎 + MCP 工具服务器**：LLM 智能全部外置于用户自接的 MCP 客户端（如 Claude）。
 >
-> 审计方法注记：本项目仅两个 Python 文件（server 17,289 行 + MCP 客户端 5,470 行），核心链路（决策引擎/错误恢复/执行器/恢复循环/CTF 工作流/CVE 智能/利用生成器/端点样例/MCP 装配）全部亲读；156 个 REST 端点与 160 个 MCP 工具为同构样板（参数校验→拼命令→执行器），抽样 5 个确认模式后按类登记。
+> 审计方法注记：本项目仅两个 Python 文件（server 17,289 行 + MCP 客户端 5,470 行）。核心段（决策引擎主体、错误分类与恢复知识库、执行器、恢复循环、nmap 端点完整范本、CVE 智能/利用生成器样段、MCP 装配）亲读约 1,400 行；其余 155 个 REST 端点**未逐个读**，按结构图与 nmap 范本推定同构（此推定待后续抽样复核）。
 
 ## 0. 元信息
 
@@ -150,7 +150,7 @@ Flask app + 全局单例装配（cache/telemetry/error_handler/decision_engine/p
 | `hexstrike_server.py` 2795-2900（CTF 工作流） | ✅ 亲读 | 后半（automator/team coordinator）同构抽查 |
 | `hexstrike_server.py` 6783-7003（执行器） | ✅ 亲读 | 全文 |
 | `hexstrike_server.py` 8636-8928（缓存/恢复循环/重建） | ✅ 亲读 | 全文 |
-| `hexstrike_server.py` 10327-10377（nmap 端点） | ✅ 亲读 | 其余 150 端点同构抽样 5 个 |
+| `hexstrike_server.py` 10327-10377（nmap 端点） | ✅ 亲读全文 | 唯一完整端点范本；其余 155 个端点同构为推定，未逐个读 |
 | `hexstrike_server.py` 5750-5800（CVE 智能）7132-7200（利用模板） | ✅ 亲读 | 样本确认模板库性质 |
 | `hexstrike_server.py` 105-571/2438-2795/4223-6615/9024-9283/10041-10326/11485-17289 | ⬜ 部分 | 视觉引擎/其余工作流/优化器进程池/其余端点——同构样板按类登记 |
 | `hexstrike_mcp.py` 1-340（装配+工具样例） | ✅ 亲读 | 其余 159 个 @mcp.tool 同构 |
