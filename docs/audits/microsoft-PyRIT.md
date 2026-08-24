@@ -54,19 +54,44 @@ datasets/（种子提示/越狱模板/harm 定义/lexicons/10 族 executor YAML 
 
 ## 4. 核心模块逐行精读（审计主体）
 
-### 4.1 对抗会话引擎（component/adversarial_conversation_manager.py，871 行亲读头 120+结构）
+### 4.1 对抗会话引擎（component/adversarial_conversation_manager.py，871 行**全文亲读**——2026-08-24 深度补读）
 
 - **本框架最重要的抽象**：所有多轮攻击（RedTeaming/Crescendo/TAP/PAIR/SimulatedConversation）共享同一个对抗会话循环——攻击方 LLM 每轮产出"下一条攻击消息"。
-- **规范化 adversarial_chat JSON schema**：攻击方回复强制走共享 schema（`next_message` + `rationale` + `last_response_summary`），除非提示自带 schema——**回复结构化校验而非裸文本信任**（文件头注释原文："always structurally validated instead of silently trusted"）；各攻击的对抗提示因此**可互换**。
-- `_ResolvedAdversarialConfig`：对抗提示解析单一所有者；Crescendo/TAP/Simulated 走 override 模式（自供提示文本，仅解析系统提示）。
-- `AdversarialTurn`：目标消息 + 解析回复 + bypassed 标志（调用方可直接种消息绕过攻击方）；`_ModalityFeedbackRouter` 把先前/种子媒体织进消息——多模态攻击的统一通道。
-- 空文本目标回复有专门 feedback 字符串处理（文件尾段）。
+- **规范化 adversarial_chat JSON schema 与单源验证**：回复解析器（_parse_adversarial_reply，213-276）从 schema 本身读 required/properties/additionalProperties（**schema 是唯一事实源，不硬编码副本**——不会与 YAML 漂移）；解析前剥 markdown 代码栅栏 + **camelCase→snake_case 键名归一**（后端漂移到 `nextMessage` 也能过，不烧重试）；`next_message` 是攻击循环消费的唯一字段、恒必填。
+- **JSON 重试带历史回滚**（:805-871）：`send_json_with_retry_async` 的重试在**干净会话历史**上进行——失败的轮次先从记忆里回滚再重发，而不是把模型自己的畸形回复留在历史里重放。
+- **反馈构建器四分支**（_build_adversarial_feedback_text，157-191）：目标响应 blocked→短失败通知；error→带错误码；正常→文本+（可选）scorer rationale（use_score_as_feedback）；空→"please continue" 轻推。**媒体丢失警告**（612-643）：目标回了纯媒体而攻击方无法消费时降级为轻推——这是配置错误的信号（文本攻击方配了图像目标），显式 warn 而非静默。
+- **种子三分路**（get_next_message_async，645-724）：具体种子无占位符→**绕过攻击方**直接发（duplicate 给新 id，防种子被改写/双持久化）；带对抗占位符→攻击方文本填进占位槽（种子媒体与文本同行）；无种子→模态路由器构建目标消息。
+- **双入口设计**：`get_next_message_async`（完整契约，返回即发消息）vs `generate_adversarial_reply_async`（只到解析回复为止）——后者专为 TAP 存在：它要先对 next_message 跑 on-topic 评分、可能带反馈重问，再决定发什么。
+- 每次发送都包在 execution_context（component_role=ADVERSARIAL_CHAT 等）里——遥测按角色关联。
 
-### 4.2 经典循环与树搜索
+### 4.2 执行器与结果容器（core/attack_executor.py 481 行**全文亲读**——补读新增）
 
-- **RedTeamingAttack**（red_teaming.py 亲读）：`while executed_turns < max_turns and not achieved`（默认 10 轮）；每轮=攻击方生成→发目标→**objective scorer 判定**（可 score_last_turn_only）；能力要求声明式校验（见 4.3）。
-- **TAP**（tree_of_attacks.py 2513 行，结构亲读）：树节点 `_TreeOfAttacksNode` 各自持有会话与状态，带 nodes_explored/nodes_pruned/max_depth_reached 统计与 `tree_visualization`（rich Tree 可视化）；`TAPAttackScoringConfig` 强制校验 objective scorer 与 refusal scorer 的**类型正确**；threshold 参数化剪枝。
-- **Crescendo/PAIR/SimulatedConversation**：同骨架的渐进式/迭代提问/双角色模拟变体；**ChunkedRequest**（把长请求分块发送绕长度限制）；**MultiPromptSending**（多提示并行）；**SequentialAttack** 复合编排（前攻输出作后攻输入）。
+- **AttackExecutorResult 部分完成语义**：completed_results + incomplete_objectives(目标,异常) + **input_indices**（结果↔原始输入位置映射，部分失败时仍可对账）；`raise_if_incomplete()` 严格模式 vs 部分模式。
+- **懒信号量+事件循环重建**（:139-167）：asyncio Semaphore 首次 await 绑定事件循环、跨 asyncio.run 复用会炸——executor 在 `_get_semaphore` 里检测循环变化重建，**一个实例可安全跨 notebook 多次运行**（注释 10 行详述缘由，:139-146）。
+- **双阶段失败合并**：参数构建失败（from_seed_group_async）与执行失败分开收集，按**原始输入位置**合并回一个结果（_merge_parameter_build_failures）；致命异常（BaseException 非 Exception，如取消）**无条件立即上抛**（:445-450）。
+- attribution（编排器血缘）盖到每个 context 上随结果持久化。
+
+### 4.3 经典循环与 Crescendo 回溯协议（red_teaming.py 534 行**全文亲读** + crescendo.py 主循环与回溯**全文亲读** + 基类 157 行**全文亲读**——补读升级）
+
+- **RedTeaming 循环**（:297-368）：`while turns < max and (score_last_turn_only or not achieved)`——**score_last_turn_only 模式跳过中间轮评分**（成本优化：中间轮不花裁判钱）；对抗会话管理器**一次构建全程复用**（注释明言其无每轮可变态）；种子 next_message **消费即清**（单轮种子语义）。
+- **单轮目标会话轮换**（基类 :98-157）：目标不支持多轮时每轮换新 conversation_id；旧会话记为 **PRUNED 类型的相关会话引用**（溯源保留）；**系统消息复制进新会话**——目标不丢系统提示词。这条"无状态目标也能跑多轮攻击"的适配完全在编排层完成。
+- **Crescendo 回溯协议**（crescendo.py 779-834——**原审计完全遗漏的独家机制**）：
+  1. 拒答由独立的 SelfAskRefusalScorer 判定（非目标评分器）；
+  2. 确认拒答→`duplicate_conversation_excluding_last_turn`——**记忆级事务回滚**，被拒轮次从目标的视角"从未发生"；
+  3. **回滚轮不计入 max_turns**（回溯免费，只受 max_backtracks 预算约束）；超预算后拒答不再回滚、轮次照计；
+  4. 被拒提示词文本回喂攻击方（"换个思路，这是被拒的内容"）；score-as-feedback 可选（归一化 0-1 分+rationale）；
+  5. **重试种子变换**（_build_retry_seed_message）：被拒的具体种子→保留全部媒体片段+文本换成对抗占位符（攻击方重新生成文本、媒体不丢）；
+  6. backtrack_count 进结果元数据。
+  这是全部已审项目里唯一的**会话级事务回滚**——shannon 的回滚在文件级、theori 的压缩是截断，PyRIT 把"失败的轮次"做成可撤销事务。
+- **Crescendo 多模态输入态声明**（_build_adversarial_prompt，504-577）：每轮告诉攻击方本次输入模式（seed_media/latest_response/text_only）与种子媒体是否仍attached——攻击方对"目标将收到什么形态的输入"有显式知情。
+
+### 4.4 TAP 树搜索（tree_of_attacks.py 2,513 行，主循环+节点核心**补读亲读**）
+
+- **配置四元**：tree_width（默认 3）/tree_depth/branching_factor/batch_size + on_topic_checking_enabled。
+- **主循环**（_perform_async，1725-1790）：逐深度迭代→首轮初始化 width 个节点/后续轮按 branching_factor 分叉→**并行批量执行**所有活跃节点→按分剪枝回 width→更新最优会话→目标达成即早停/全剪光即断。
+- **离题反馈重试环**（_generate_red_teaming_prompt_async，975-1050）：生成后先过 on-topic 评分器；离题→把"你的上一条提示被判离题+理由+目标重申"回喂攻击方重生成（RETRY_MAX 次上限）；仍离题→**该分支剪枝**（off_topic=True）。这正是共享引擎第二个入口存在的原因。
+- **前置对话计入深度**且**每个节点各得一份拷贝**（节点独立会话 ID 并行探索）；JSON 解析错误→分支剪枝（_handle_json_error）。
+- 节点 duplicate 克隆时连可视化树位置一起拷贝。
 
 ### 4.3 目标抽象与能力协商（prompt_target + TargetRequirements，red_teaming.py:53-57 亲读）
 
@@ -99,14 +124,20 @@ React 前端（conversation 浏览/score 审阅）+ analytics；无运行中审�
 
 ## 5. 值得借鉴的设计与技巧
 
-1. **共享对抗会话引擎 + 规范化 schema**：八种多轮攻击复用一个循环组件，攻击方回复结构化校验、提示跨攻击互换——新增攻击策略只需差异化策略层。
-2. **能力协商拒绝静默适配**（TargetRequirements.native_required）：异构目标下"适配即语义破坏"的显式失败哲学。
-3. **评分器也是被评对象**（scorer_evaluation + 人工标注集）：LLM 裁判的质量度量闭环。
-4. **裁判提示词的参数化 YAML 化**（min/max 刻度、JSON schema 绑定、角色框定语句）——评分提示词=数据资产，可版本可复用。
-5. **攻击过程全量入库为第一等公民**（CentralMemory + 前端）：红队的可复盘性产品化。
-6. **ChunkedRequest/MultiPromptSending/ModalityFeedbackRouter**：绕长限/并行/多模态织入等实战组件化。
-7. **SequentialAttack 复合编排**：攻击输出作为下游攻击输入——攻击流水线可编程。
-8. TAP 的树统计（explored/pruned/depth）与 rich 可视化内建。
+1. **共享对抗会话引擎 + 规范化 schema**：八种多轮攻击复用一个循环组件，回复按 schema 单源验证（required/allowed 键读自 schema 本身）、camelCase 归一容错、代码栅栏剥离——**结构化输出解析的防御性三件套**；提示跨攻击互换，新增攻击只做策略层。
+2. **Crescendo 回溯协议**（独家）：记忆级事务回滚（被拒轮从目标视角抹除）+ 回滚不计轮次（只受 backtrack 预算）+ 被拒文本回喂 + 种子媒体保留变换——**把"失败的尝试"做成可撤销事务**，任何多轮攻击系统都可抄。
+3. **JSON 重试带历史回滚**：重试前把失败轮从会话记忆回滚——不重放模型自己的畸形输出。
+4. **单轮目标会话轮换**：无状态目标每轮换会话+系统消息复制+旧会话 PRUNED 溯源——适配完全在编排层，语义不损。
+5. **评分器也是被评对象**（scorer_evaluation + 人工标注集）：LLM 裁判的质量度量闭环。
+6. **裁判提示词的参数化 YAML 化**（min/max 刻度、JSON schema 绑定、角色框定语句）——评分提示词=数据资产，可版本可复用。
+7. **能力协商拒绝静默适配**（TargetRequirements.native_required）：异构目标下"适配即语义破坏"的显式失败哲学。
+8. **双阶段失败按输入位合并 + input_indices 对账**：部分失败时结果仍能映射回原始输入——批量系统的失败语义范本。
+9. **懒信号量跨事件循环重建**：asyncio 原语绑定循环的坑用检测重建解决，实例可跨 asyncio.run 复用（注释详述缘由）。
+10. **score_last_turn_only 成本模式**：中间轮不评分省裁判钱——成本语义进循环条件。
+11. **离题反馈重试环**（TAP）：生成的攻击先过 on-topic 门，离题带理由回喂重生成、超限剪枝——攻击质量的前置闸。
+12. **攻击过程全量入库为第一等公民**（CentralMemory + 前端）：红队的可复盘性产品化。
+13. **ChunkedRequest/MultiPromptSending/ModalityFeedbackRouter + 媒体丢失警告**：实战组件化与配置错误显式化。
+14. **SequentialAttack 复合编排**：攻击输出作为下游攻击输入——攻击流水线可编程。
 
 ## 6. 局限与改进点
 
@@ -127,21 +158,25 @@ React 前端（conversation 浏览/score 审阅）+ analytics；无运行中审�
 
 garak 与 PyRIT 构成 LLM 红队的"工具派 vs 库派"双标准：前者赢在开箱与统计，后者赢在可编程性与数据底座。
 
-## 8. 文件级审计进度
+## 8. 文件级审计进度（2026-08-24 深度补读后）
 
 | 路径 | 状态 | 备注 |
 |---|---|---|
-| `executor/attack/component/adversarial_conversation_manager.py` | ✅ 亲读 | 头 120+结构精读 |
-| `executor/attack/multi_turn/red_teaming.py` | ✅ 亲读 | 头 60+结构+循环段 |
-| `executor/attack/multi_turn/tree_of_attacks.py` | ✅ 部分 | 结构与配置类精读（2513 行） |
-| `datasets/score/scales/red_teamer_system_prompt.yaml` | ✅ 亲读 | 裁判提示词范式 |
-| `executor/attack/core/`（executor/config/strategy/attribution） | ⬜ 部分 | 经调用面确认 |
-| `prompt_target/`（CapabilityName/TargetRequirements） | ✅ 部分 | 协商机制经 red_teaming 亲读 |
-| `score/`（scorer/message_scorer/SelfAsk 家族/scorer_evaluation） | ✅ 部分 | 基类结构+裁判家族模式 |
-| `memory/`（central/sqlite/azure） | ⬜ 部分 | 机制登记 |
-| `pyrit/backend/` `frontend/` `cli/` | ⬜ | 服务/UI 层未读 |
-| `datasets/executors/`（10 族 YAML 管线） | ⬜ 部分 | 清单已读（crescendo×5 变体等） |
+| `executor/attack/component/adversarial_conversation_manager.py` | ✅ 亲读全文 | 871/871 行 |
+| `executor/attack/core/attack_executor.py` | ✅ 亲读全文 | 481/481 行 |
+| `executor/attack/multi_turn/red_teaming.py` | ✅ 亲读全文 | 534/534 行（主循环+发送+评分） |
+| `executor/attack/multi_turn/multi_turn_attack_strategy.py` | ✅ 亲读全文 | 157/157 行 |
+| `executor/attack/multi_turn/crescendo.py` | ✅ 亲读核心 | 主循环+回溯协议+提示构建+种子变换（约 400/860 行）；setup/发送细节待续 |
+| `executor/attack/multi_turn/tree_of_attacks.py` | ✅ 亲读核心 | 主循环+节点核心+离题重试+剪枝（约 500/2513 行）；节点发送/评分细节待续 |
+| `score/message_scorer.py` `scorer.py` | ✅ 部分 | score_async 主流程+ScoringExpectation+持久化语义；各 SelfAsk 家族与 scorer_evaluation 待续 |
+| `datasets/score/scales/red_teamer_system_prompt.yaml` | ✅ 亲读全文 | 裁判提示词范式 |
+| `executor/attack/core/`（strategy/parameters/attribution） | ⬜ 部分 | 经 executor/strategy 调用面确认 |
+| `prompt_target/`（CapabilityName/TargetRequirements） | ✅ 部分 | 协商机制经 red_teaming/crescendo 亲读 |
+| `pair.py` `simulated_conversation.py` `chunked_request.py` `multi_prompt_sending.py` | ⬜ | 同构骨架（共享引擎消费方），清单登记 |
+| `memory/` `pyrit/backend/` `frontend/` `cli/` | ⬜ | 服务/存储层登记 |
+
+> 补读方法注记：本文件按"核心链文件逐行读完"标准于 2026-08-24 重审，新增 Crescendo 回溯协议、JSON 重试历史回滚、单轮目标会话轮换、双阶段失败合并、离题反馈重试环、score_last_turn_only 成本模式等此前遗漏的关键设计；crescendo 剩余细节、pair/其余策略、scorer 家族为后续回读项。
 
 ## 9. 结论
 
-**PyRIT 的核心实现思路是：把 AI 红队做成可编程的编排器库——八种多轮攻击策略（经典对抗/渐进/PAIR/树搜索/模拟对话/分块/多提示/串接复合）共享一个带规范化 JSON schema 的对抗会话引擎，目标端用能力协商显式拒绝会改变语义的静默适配，objective scorer（参数化 YAML 裁判提示词 + 裁判元评估）门控终止，全部对话/评分/请求作为第一等公民落入中央数据库并可前端复盘。** 它与 garak 分别代表 LLM 红队的"库派"与"工具派"双标准；其共享对抗引擎、能力协商、裁判也是资产这三个设计对任何红队框架都是直接可移植的。
+**PyRIT 的核心实现思路是：把 AI 红队做成可编程的编排器库——八种多轮攻击策略共享一个带规范化 JSON schema（单源验证+camelCase 容错+失败轮历史回滚重试）的对抗会话引擎，目标端用能力协商显式拒绝会改变语义的静默适配、单轮目标靠编排层会话轮换接入，objective scorer（参数化 YAML 裁判提示词 + 裁判元评估 + ScoringExpectation 携带目标）门控终止；Crescendo 的回溯协议把被拒轮次做成记忆级可撤销事务（回滚不计轮次、种子媒体保留、被拒文本回喂），TAP 用宽度/分支/剪枝加离题反馈重试环做树搜索，执行层以双阶段失败合并与输入位对账管理批量部分失败，全部对话/评分/请求作为第一等公民落入中央数据库并可前端复盘。** 它与 garak 分别代表 LLM 红队的"库派"与"工具派"双标准；其共享对抗引擎、回溯协议、能力协商、裁判也是资产这四个设计对任何红队框架都是直接可移植的。
