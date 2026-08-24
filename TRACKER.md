@@ -19,7 +19,7 @@
 | [`OWASP/Nettacker`](https://github.com/OWASP/Nettacker) | `repos/agents/Nettacker` | ✅ | 未开始 |  |
 | [`Ed1s0nZ/CyberStrikeAI`](https://github.com/Ed1s0nZ/CyberStrikeAI) | `repos/agents/CyberStrikeAI` | ✅ | 未开始 |  |
 | [`elder-plinius/T3MP3ST`](https://github.com/elder-plinius/T3MP3ST) | `repos/agents/T3MP3ST` | ✅ | 未开始 |  |
-| [`microsoft/PyRIT`](https://github.com/microsoft/PyRIT) | `repos/agents/PyRIT` | ✅ | 未开始 |  |
+| [`microsoft/PyRIT`](https://github.com/microsoft/PyRIT) | `repos/agents/PyRIT` | ✅ | 已完成 | [docs/audits/microsoft-PyRIT.md](docs/audits/microsoft-PyRIT.md) |
 | [`GH05TCREW/pentestagent`](https://github.com/GH05TCREW/pentestagent) | `repos/agents/pentestagent` | ✅ | 未开始 |  |
 | [`protectai/vulnhuntr`](https://github.com/protectai/vulnhuntr) | `repos/agents/vulnhuntr` | ✅ | 未开始 |  |
 | [`samugit83/redamon`](https://github.com/samugit83/redamon) | `repos/agents/redamon` | ✅ | 未开始 |  |
