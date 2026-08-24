@@ -11,7 +11,7 @@
 | [`KeygraphHQ/shannon`](https://github.com/KeygraphHQ/shannon) | `repos/agents/shannon` | ✅ | 已完成 | [docs/audits/KeygraphHQ-shannon.md](docs/audits/KeygraphHQ-shannon.md) |
 | [`usestrix/strix`](https://github.com/usestrix/strix) | `repos/agents/strix` | ✅ | 已完成 | [docs/audits/usestrix-strix.md](docs/audits/usestrix-strix.md) |
 | [`promptfoo/promptfoo`](https://github.com/promptfoo/promptfoo) | `repos/agents/promptfoo` | ✅ | 未开始 |  |
-| [`vxcontrol/pentagi`](https://github.com/vxcontrol/pentagi) | `repos/agents/pentagi` | ✅ | 未开始 |  |
+| [`vxcontrol/pentagi`](https://github.com/vxcontrol/pentagi) | `repos/agents/pentagi` | ✅ | 已完成 | [docs/audits/vxcontrol-pentagi.md](docs/audits/vxcontrol-pentagi.md) |
 | [`GreyDGL/PentestGPT`](https://github.com/GreyDGL/PentestGPT) | `repos/agents/PentestGPT` | ✅ | 未开始 |  |
 | [`0x4m4/hexstrike-ai`](https://github.com/0x4m4/hexstrike-ai) | `repos/agents/hexstrike-ai` | ✅ | 未开始 |  |
 | [`aliasrobotics/cai`](https://github.com/aliasrobotics/cai) | `repos/agents/cai` | ✅ | 未开始 |  |
