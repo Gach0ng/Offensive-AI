@@ -69,7 +69,7 @@
 
 | 仓库 | 本地路径 | 克隆 | 审计 | 审计文档 |
 |------|---------|:----:|:----:|---------|
-| [`Team-Atlanta/aixcc-afc-atlantis`](https://github.com/Team-Atlanta/aixcc-afc-atlantis) | `repos/aixcc/aixcc-afc-atlantis` | ✅ | 未开始 |  |
+| [`Team-Atlanta/aixcc-afc-atlantis`](https://github.com/Team-Atlanta/aixcc-afc-atlantis) | `repos/aixcc/aixcc-afc-atlantis` | ✅ | 已完成 | [docs/audits/Team-Atlanta-aixcc-afc-atlantis.md](docs/audits/Team-Atlanta-aixcc-afc-atlantis.md) |
 | [`theori-io/aixcc-afc-archive`](https://github.com/theori-io/aixcc-afc-archive) | `repos/aixcc/aixcc-afc-archive` | ✅ | 已完成 | [docs/audits/theori-io-aixcc-afc-archive.md](docs/audits/theori-io-aixcc-afc-archive.md) |
 | [`o2lab/afc-crs-all-you-need-is-a-fuzzing-brain`](https://github.com/o2lab/afc-crs-all-you-need-is-a-fuzzing-brain) | `repos/aixcc/afc-crs-all-you-need-is-a-fuzzing-brain` | ✅ | 未开始 |  |
 | [`shellphish/artiphishell`](https://github.com/shellphish/artiphishell) | `repos/aixcc/artiphishell` | ✅ | 已完成 | [docs/audits/shellphish-artiphishell.md](docs/audits/shellphish-artiphishell.md) |
