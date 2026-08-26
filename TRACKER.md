@@ -41,7 +41,7 @@
 | [`splx-ai/agentic-radar`](https://github.com/splx-ai/agentic-radar) | `repos/agents/agentic-radar` | ✅ | 已完成 | [docs/audits/splx-ai-agentic-radar.md](docs/audits/splx-ai-agentic-radar.md) |
 | [`ghostsecurity/reaper`](https://github.com/ghostsecurity/reaper) | `repos/agents/reaper` | ✅ | 未开始 |  |
 | [`PentesterFlow/agent`](https://github.com/PentesterFlow/agent) | `repos/agents/agent` | ✅ | 未开始 |  |
-| [`xalgord/xalgorix`](https://github.com/xalgord/xalgorix) | `repos/agents/xalgorix` | ✅ | 未开始 |  |
+| [`xalgord/xalgorix`](https://github.com/xalgord/xalgorix) | `repos/agents/xalgorix` | ✅ | 已完成 | [docs/audits/xalgord-xalgorix.md](docs/audits/xalgord-xalgorix.md) |
 | [`ASCIT31/Dark-Moon`](https://github.com/ASCIT31/Dark-Moon) | `repos/agents/Dark-Moon` | ✅ | 未开始 |  |
 | [`verialabs/ctf-agent`](https://github.com/verialabs/ctf-agent) | `repos/agents/ctf-agent` | ✅ | 未开始 |  |
 | [`westonbrown/Cyber-AutoAgent`](https://github.com/westonbrown/Cyber-AutoAgent) | `repos/agents/Cyber-AutoAgent` | ✅ | 未开始 |  |
