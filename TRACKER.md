@@ -56,7 +56,7 @@
 | [`xoxruns/deadend-cli`](https://github.com/xoxruns/deadend-cli) | `repos/agents/deadend-cli` | ✅ | 未开始 |  |
 | [`yz9yt/BugTrace-AI`](https://github.com/yz9yt/BugTrace-AI) | `repos/agents/BugTrace-AI` | ✅ | 已完成 | [docs/audits/yz9yt-BugTrace-AI.md](docs/audits/yz9yt-BugTrace-AI.md) |
 | [`GitHubSecurityLab/seclab-taskflow-agent`](https://github.com/GitHubSecurityLab/seclab-taskflow-agent) | `repos/agents/seclab-taskflow-agent` | ✅ | 未开始 |  |
-| [`KHenryAegis/VulnBot`](https://github.com/KHenryAegis/VulnBot) | `repos/agents/VulnBot` | ✅ | 未开始 |  |
+| [`KHenryAegis/VulnBot`](https://github.com/KHenryAegis/VulnBot) | `repos/agents/VulnBot` | ✅ | 已完成 | [docs/audits/KHenryAegis-VulnBot.md](docs/audits/KHenryAegis-VulnBot.md) |
 | [`chainreactors/tinyctfer`](https://github.com/chainreactors/tinyctfer) | `repos/agents/tinyctfer` | ✅ | 未开始 |  |
 | [`NYU-LLM-CTF/nyuctf_agents`](https://github.com/NYU-LLM-CTF/nyuctf_agents) | `repos/agents/nyuctf_agents` | ✅ | 未开始 |  |
 | [`antoninoLorenzo/AI-OPS`](https://github.com/antoninoLorenzo/AI-OPS) | `repos/agents/AI-OPS` | ✅ | 未开始 |  |
