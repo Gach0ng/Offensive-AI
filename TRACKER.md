@@ -20,7 +20,7 @@
 | [`Ed1s0nZ/CyberStrikeAI`](https://github.com/Ed1s0nZ/CyberStrikeAI) | `repos/agents/CyberStrikeAI` | ✅ | 已完成 | [docs/audits/Ed1s0nZ-CyberStrikeAI.md](docs/audits/Ed1s0nZ-CyberStrikeAI.md) |
 | [`elder-plinius/T3MP3ST`](https://github.com/elder-plinius/T3MP3ST) | `repos/agents/T3MP3ST` | ✅ | 已完成 | [docs/audits/elder-plinius-T3MP3ST.md](docs/audits/elder-plinius-T3MP3ST.md) |
 | [`microsoft/PyRIT`](https://github.com/microsoft/PyRIT) | `repos/agents/PyRIT` | ✅ | 已完成 | [docs/audits/microsoft-PyRIT.md](docs/audits/microsoft-PyRIT.md) |
-| [`GH05TCREW/pentestagent`](https://github.com/GH05TCREW/pentestagent) | `repos/agents/pentestagent` | ✅ | 未开始 |  |
+| [`GH05TCREW/pentestagent`](https://github.com/GH05TCREW/pentestagent) | `repos/agents/pentestagent` | ✅ | 已完成 | [docs/audits/GH05TCREW-pentestagent.md](docs/audits/GH05TCREW-pentestagent.md) |
 | [`protectai/vulnhuntr`](https://github.com/protectai/vulnhuntr) | `repos/agents/vulnhuntr` | ✅ | 已完成 | [docs/audits/protectai-vulnhuntr.md](docs/audits/protectai-vulnhuntr.md) |
 | [`samugit83/redamon`](https://github.com/samugit83/redamon) | `repos/agents/redamon` | ✅ | 未开始 |  |
 | [`confident-ai/deepteam`](https://github.com/confident-ai/deepteam) | `repos/agents/deepteam` | ✅ | 已完成 | [docs/audits/confident-ai-deepteam.md](docs/audits/confident-ai-deepteam.md) |
