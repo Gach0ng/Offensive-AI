@@ -46,7 +46,7 @@
 | [`verialabs/ctf-agent`](https://github.com/verialabs/ctf-agent) | `repos/agents/ctf-agent` | ✅ | 未开始 |  |
 | [`westonbrown/Cyber-AutoAgent`](https://github.com/westonbrown/Cyber-AutoAgent) | `repos/agents/Cyber-AutoAgent` | ✅ | 未开始 |  |
 | [`crond-jaist/AutoPentest-DRL`](https://github.com/crond-jaist/AutoPentest-DRL) | `repos/agents/AutoPentest-DRL` | ✅ | 未开始 |  |
-| [`0ca/BoxPwnr`](https://github.com/0ca/BoxPwnr) | `repos/agents/BoxPwnr` | ✅ | 未开始 |  |
+| [`0ca/BoxPwnr`](https://github.com/0ca/BoxPwnr) | `repos/agents/BoxPwnr` | ✅ | 已完成 | [docs/audits/0ca-BoxPwnr.md](docs/audits/0ca-BoxPwnr.md) |
 | [`ARCANGEL0/EVA`](https://github.com/ARCANGEL0/EVA) | `repos/agents/EVA` | ✅ | 未开始 |  |
 | [`m-sec-org/BreachWeave`](https://github.com/m-sec-org/BreachWeave) | `repos/agents/BreachWeave` | ✅ | 未开始 |  |
 | [`SHAdd0WTAka/Zen-Ai-Pentest`](https://github.com/SHAdd0WTAka/Zen-Ai-Pentest) | `repos/agents/Zen-Ai-Pentest` | ✅ | 未开始 |  |
