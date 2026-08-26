@@ -110,7 +110,7 @@
 | [`UKGovernmentBEIS/inspect_cyber`](https://github.com/UKGovernmentBEIS/inspect_cyber) | `repos/benchmarks/inspect_cyber` | ✅ | 未开始 |  |
 | [`uiuc-kang-lab/cve-bench`](https://github.com/uiuc-kang-lab/cve-bench) | `repos/benchmarks/cve-bench` | ✅ | 未开始 |  |
 | [`SEC-bench/SEC-bench`](https://github.com/SEC-bench/SEC-bench) | `repos/benchmarks/SEC-bench` | ✅ | 未开始 |  |
-| [`NYU-LLM-CTF/CTFTiny`](https://github.com/NYU-LLM-CTF/CTFTiny) | `repos/benchmarks/CTFTiny` | ✅ | 未开始 |  |
+| [`NYU-LLM-CTF/CTFTiny`](https://github.com/NYU-LLM-CTF/CTFTiny) | `repos/benchmarks/CTFTiny` | ✅ | 已完成 | [docs/audits/NYU-LLM-CTF-CTFTiny.md](docs/audits/NYU-LLM-CTF-CTFTiny.md) |
 
 ## 六、研究代码（research）
 
