@@ -34,7 +34,7 @@
 | [`0xSteph/pentest-ai`](https://github.com/0xSteph/pentest-ai) | `repos/agents/pentest-ai` | ✅ | 未开始 |  |
 | [`utkusen/promptmap`](https://github.com/utkusen/promptmap) | `repos/agents/promptmap` | ✅ | 未开始 |  |
 | [`CyberStrikeus/CyberStrike`](https://github.com/CyberStrikeus/CyberStrike) | `repos/agents/CyberStrike` | ✅ | 未开始 |  |
-| [`ipa-lab/hackingBuddyGPT`](https://github.com/ipa-lab/hackingBuddyGPT) | `repos/agents/hackingBuddyGPT` | ✅ | 未开始 |  |
+| [`ipa-lab/hackingBuddyGPT`](https://github.com/ipa-lab/hackingBuddyGPT) | `repos/agents/hackingBuddyGPT` | ✅ | 已完成 | [docs/audits/ipa-lab-hackingBuddyGPT.md](docs/audits/ipa-lab-hackingBuddyGPT.md) |
 | [`bugbasesecurity/pentest-copilot`](https://github.com/bugbasesecurity/pentest-copilot) | `repos/agents/pentest-copilot` | ✅ | 未开始 |  |
 | [`berylliumsec/nebula`](https://github.com/berylliumsec/nebula) | `repos/agents/nebula` | ✅ | 未开始 |  |
 | [`SanMuzZzZz/LuaN1aoAgent`](https://github.com/SanMuzZzZz/LuaN1aoAgent) | `repos/agents/LuaN1aoAgent` | ✅ | 未开始 |  |
