@@ -55,7 +55,7 @@
 | [`simon-p-j-r/LLM4Pentest`](https://github.com/simon-p-j-r/LLM4Pentest) | `repos/agents/LLM4Pentest` | ✅ | 已完成 | [docs/audits/simon-p-j-r-LLM4Pentest.md](docs/audits/simon-p-j-r-LLM4Pentest.md) |
 | [`xoxruns/deadend-cli`](https://github.com/xoxruns/deadend-cli) | `repos/agents/deadend-cli` | ✅ | 已完成 | [docs/audits/xoxruns-deadend-cli.md](docs/audits/xoxruns-deadend-cli.md) |
 | [`yz9yt/BugTrace-AI`](https://github.com/yz9yt/BugTrace-AI) | `repos/agents/BugTrace-AI` | ✅ | 已完成 | [docs/audits/yz9yt-BugTrace-AI.md](docs/audits/yz9yt-BugTrace-AI.md) |
-| [`GitHubSecurityLab/seclab-taskflow-agent`](https://github.com/GitHubSecurityLab/seclab-taskflow-agent) | `repos/agents/seclab-taskflow-agent` | ✅ | 未开始 |  |
+| [`GitHubSecurityLab/seclab-taskflow-agent`](https://github.com/GitHubSecurityLab/seclab-taskflow-agent) | `repos/agents/seclab-taskflow-agent` | ✅ | 已完成 | [docs/audits/GitHubSecurityLab-seclab-taskflow-agent.md](docs/audits/GitHubSecurityLab-seclab-taskflow-agent.md) |
 | [`KHenryAegis/VulnBot`](https://github.com/KHenryAegis/VulnBot) | `repos/agents/VulnBot` | ✅ | 已完成 | [docs/audits/KHenryAegis-VulnBot.md](docs/audits/KHenryAegis-VulnBot.md) |
 | [`chainreactors/tinyctfer`](https://github.com/chainreactors/tinyctfer) | `repos/agents/tinyctfer` | ✅ | 未开始 |  |
 | [`NYU-LLM-CTF/nyuctf_agents`](https://github.com/NYU-LLM-CTF/nyuctf_agents) | `repos/agents/nyuctf_agents` | ✅ | 未开始 |  |
