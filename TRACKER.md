@@ -51,7 +51,7 @@
 | [`m-sec-org/BreachWeave`](https://github.com/m-sec-org/BreachWeave) | `repos/agents/BreachWeave` | ✅ | 未开始 |  |
 | [`SHAdd0WTAka/Zen-Ai-Pentest`](https://github.com/SHAdd0WTAka/Zen-Ai-Pentest) | `repos/agents/Zen-Ai-Pentest` | ✅ | 已完成 | [docs/audits/SHAdd0WTAka-Zen-Ai-Pentest.md](docs/audits/SHAdd0WTAka-Zen-Ai-Pentest.md) |
 | [`transilienceai/communitytools`](https://github.com/transilienceai/communitytools) | `repos/agents/communitytools` | ✅ | 已完成 | [docs/audits/transilienceai-communitytools.md](docs/audits/transilienceai-communitytools.md) |
-| [`aielte-research/HackSynth`](https://github.com/aielte-research/HackSynth) | `repos/agents/HackSynth` | ✅ | 未开始 |  |
+| [`aielte-research/HackSynth`](https://github.com/aielte-research/HackSynth) | `repos/agents/HackSynth` | ✅ | 已完成 | [docs/audits/aielte-research-HackSynth.md](docs/audits/aielte-research-HackSynth.md) |
 | [`simon-p-j-r/LLM4Pentest`](https://github.com/simon-p-j-r/LLM4Pentest) | `repos/agents/LLM4Pentest` | ✅ | 未开始 |  |
 | [`xoxruns/deadend-cli`](https://github.com/xoxruns/deadend-cli) | `repos/agents/deadend-cli` | ✅ | 未开始 |  |
 | [`yz9yt/BugTrace-AI`](https://github.com/yz9yt/BugTrace-AI) | `repos/agents/BugTrace-AI` | ✅ | 已完成 | [docs/audits/yz9yt-BugTrace-AI.md](docs/audits/yz9yt-BugTrace-AI.md) |
