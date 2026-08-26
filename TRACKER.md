@@ -26,7 +26,7 @@
 | [`confident-ai/deepteam`](https://github.com/confident-ai/deepteam) | `repos/agents/deepteam` | ✅ | 已完成 | [docs/audits/confident-ai-deepteam.md](docs/audits/confident-ai-deepteam.md) |
 | [`Armur-Ai/Pentest-Swarm-AI`](https://github.com/Armur-Ai/Pentest-Swarm-AI) | `repos/agents/Pentest-Swarm-AI` | ✅ | 未开始 |  |
 | [`0xSteph/pentest-ai-agents`](https://github.com/0xSteph/pentest-ai-agents) | `repos/agents/pentest-ai-agents` | ✅ | 未开始 |  |
-| [`oritera/Cairn`](https://github.com/oritera/Cairn) | `repos/agents/Cairn` | ✅ | 未开始 |  |
+| [`oritera/Cairn`](https://github.com/oritera/Cairn) | `repos/agents/Cairn` | ✅ | 已完成 | [docs/audits/oritera-Cairn.md](docs/audits/oritera-Cairn.md) |
 | [`msoedov/agentic_security`](https://github.com/msoedov/agentic_security) | `repos/agents/agentic_security` | ✅ | 已完成 | [docs/audits/msoedov-agentic_security.md](docs/audits/msoedov-agentic_security.md) |
 | [`zakirkun/guardian-cli`](https://github.com/zakirkun/guardian-cli) | `repos/agents/guardian-cli` | ✅ | 未开始 |  |
 | [`trailofbits/buttercup`](https://github.com/trailofbits/buttercup) | `repos/agents/buttercup` | ✅ | 已完成 | [docs/audits/trailofbits-buttercup.md](docs/audits/trailofbits-buttercup.md) |
