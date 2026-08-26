@@ -24,7 +24,7 @@
 | [`protectai/vulnhuntr`](https://github.com/protectai/vulnhuntr) | `repos/agents/vulnhuntr` | ✅ | 已完成 | [docs/audits/protectai-vulnhuntr.md](docs/audits/protectai-vulnhuntr.md) |
 | [`samugit83/redamon`](https://github.com/samugit83/redamon) | `repos/agents/redamon` | ✅ | 已完成 | [docs/audits/samugit83-redamon.md](docs/audits/samugit83-redamon.md) |
 | [`confident-ai/deepteam`](https://github.com/confident-ai/deepteam) | `repos/agents/deepteam` | ✅ | 已完成 | [docs/audits/confident-ai-deepteam.md](docs/audits/confident-ai-deepteam.md) |
-| [`Armur-Ai/Pentest-Swarm-AI`](https://github.com/Armur-Ai/Pentest-Swarm-AI) | `repos/agents/Pentest-Swarm-AI` | ✅ | 未开始 |  |
+| [`Armur-Ai/Pentest-Swarm-AI`](https://github.com/Armur-Ai/Pentest-Swarm-AI) | `repos/agents/Pentest-Swarm-AI` | ✅ | 已完成 | [docs/audits/Armur-Ai-Pentest-Swarm-AI.md](docs/audits/Armur-Ai-Pentest-Swarm-AI.md) |
 | [`0xSteph/pentest-ai-agents`](https://github.com/0xSteph/pentest-ai-agents) | `repos/agents/pentest-ai-agents` | ✅ | 已完成 | [docs/audits/0xSteph-pentest-ai-agents.md](docs/audits/0xSteph-pentest-ai-agents.md) |
 | [`oritera/Cairn`](https://github.com/oritera/Cairn) | `repos/agents/Cairn` | ✅ | 已完成 | [docs/audits/oritera-Cairn.md](docs/audits/oritera-Cairn.md) |
 | [`msoedov/agentic_security`](https://github.com/msoedov/agentic_security) | `repos/agents/agentic_security` | ✅ | 已完成 | [docs/audits/msoedov-agentic_security.md](docs/audits/msoedov-agentic_security.md) |
