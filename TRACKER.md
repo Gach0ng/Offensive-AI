@@ -39,7 +39,7 @@
 | [`berylliumsec/nebula`](https://github.com/berylliumsec/nebula) | `repos/agents/nebula` | ✅ | 已完成 | [docs/audits/berylliumsec-nebula.md](docs/audits/berylliumsec-nebula.md) |
 | [`SanMuzZzZz/LuaN1aoAgent`](https://github.com/SanMuzZzZz/LuaN1aoAgent) | `repos/agents/LuaN1aoAgent` | ✅ | 未开始 |  |
 | [`splx-ai/agentic-radar`](https://github.com/splx-ai/agentic-radar) | `repos/agents/agentic-radar` | ✅ | 已完成 | [docs/audits/splx-ai-agentic-radar.md](docs/audits/splx-ai-agentic-radar.md) |
-| [`ghostsecurity/reaper`](https://github.com/ghostsecurity/reaper) | `repos/agents/reaper` | ✅ | 未开始 |  |
+| [`ghostsecurity/reaper`](https://github.com/ghostsecurity/reaper) | `repos/agents/reaper` | ✅ | 已完成 | [docs/audits/ghostsecurity-reaper.md](docs/audits/ghostsecurity-reaper.md) |
 | [`PentesterFlow/agent`](https://github.com/PentesterFlow/agent) | `repos/agents/agent` | ✅ | 未开始 |  |
 | [`xalgord/xalgorix`](https://github.com/xalgord/xalgorix) | `repos/agents/xalgorix` | ✅ | 已完成 | [docs/audits/xalgord-xalgorix.md](docs/audits/xalgord-xalgorix.md) |
 | [`ASCIT31/Dark-Moon`](https://github.com/ASCIT31/Dark-Moon) | `repos/agents/Dark-Moon` | ✅ | 未开始 |  |
