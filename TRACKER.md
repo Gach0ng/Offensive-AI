@@ -22,7 +22,7 @@
 | [`microsoft/PyRIT`](https://github.com/microsoft/PyRIT) | `repos/agents/PyRIT` | ✅ | 已完成 | [docs/audits/microsoft-PyRIT.md](docs/audits/microsoft-PyRIT.md) |
 | [`GH05TCREW/pentestagent`](https://github.com/GH05TCREW/pentestagent) | `repos/agents/pentestagent` | ✅ | 已完成 | [docs/audits/GH05TCREW-pentestagent.md](docs/audits/GH05TCREW-pentestagent.md) |
 | [`protectai/vulnhuntr`](https://github.com/protectai/vulnhuntr) | `repos/agents/vulnhuntr` | ✅ | 已完成 | [docs/audits/protectai-vulnhuntr.md](docs/audits/protectai-vulnhuntr.md) |
-| [`samugit83/redamon`](https://github.com/samugit83/redamon) | `repos/agents/redamon` | ✅ | 未开始 |  |
+| [`samugit83/redamon`](https://github.com/samugit83/redamon) | `repos/agents/redamon` | ✅ | 已完成 | [docs/audits/samugit83-redamon.md](docs/audits/samugit83-redamon.md) |
 | [`confident-ai/deepteam`](https://github.com/confident-ai/deepteam) | `repos/agents/deepteam` | ✅ | 已完成 | [docs/audits/confident-ai-deepteam.md](docs/audits/confident-ai-deepteam.md) |
 | [`Armur-Ai/Pentest-Swarm-AI`](https://github.com/Armur-Ai/Pentest-Swarm-AI) | `repos/agents/Pentest-Swarm-AI` | ✅ | 未开始 |  |
 | [`0xSteph/pentest-ai-agents`](https://github.com/0xSteph/pentest-ai-agents) | `repos/agents/pentest-ai-agents` | ✅ | 未开始 |  |
