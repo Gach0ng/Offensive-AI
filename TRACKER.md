@@ -50,7 +50,7 @@
 | [`ARCANGEL0/EVA`](https://github.com/ARCANGEL0/EVA) | `repos/agents/EVA` | ✅ | 已完成 | [docs/audits/ARCANGEL0-EVA.md](docs/audits/ARCANGEL0-EVA.md) |
 | [`m-sec-org/BreachWeave`](https://github.com/m-sec-org/BreachWeave) | `repos/agents/BreachWeave` | ✅ | 未开始 |  |
 | [`SHAdd0WTAka/Zen-Ai-Pentest`](https://github.com/SHAdd0WTAka/Zen-Ai-Pentest) | `repos/agents/Zen-Ai-Pentest` | ✅ | 已完成 | [docs/audits/SHAdd0WTAka-Zen-Ai-Pentest.md](docs/audits/SHAdd0WTAka-Zen-Ai-Pentest.md) |
-| [`transilienceai/communitytools`](https://github.com/transilienceai/communitytools) | `repos/agents/communitytools` | ✅ | 未开始 |  |
+| [`transilienceai/communitytools`](https://github.com/transilienceai/communitytools) | `repos/agents/communitytools` | ✅ | 已完成 | [docs/audits/transilienceai-communitytools.md](docs/audits/transilienceai-communitytools.md) |
 | [`aielte-research/HackSynth`](https://github.com/aielte-research/HackSynth) | `repos/agents/HackSynth` | ✅ | 未开始 |  |
 | [`simon-p-j-r/LLM4Pentest`](https://github.com/simon-p-j-r/LLM4Pentest) | `repos/agents/LLM4Pentest` | ✅ | 未开始 |  |
 | [`xoxruns/deadend-cli`](https://github.com/xoxruns/deadend-cli) | `repos/agents/deadend-cli` | ✅ | 未开始 |  |
