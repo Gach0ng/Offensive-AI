@@ -15,7 +15,7 @@
 | Landscape 定位 | 类型：AIxCC CRS（aixcc 组，但登记于 agents）/ Stars：约 1k+ / 一句话：oss-fuzz 模糊测试发现漏洞 → LangGraph 多代理写补丁 → 验证后提交竞赛 API 的全自动 CRS |
 | License | MIT（头部 SPDX） |
 | 关联论文 | 无（竞赛系统） |
-| 审计日期 / 人 | 2026-08-24 / ZCode |
+| 审计日期 / 人 | 2026-08-24 初审 / 2026-08-26 深度补读（context_retriever 1378 + swe 840 + qe 586 全文）/ ZCode |
 
 ## 1. 项目解决什么问题
 
@@ -80,9 +80,23 @@ buttercup/
 ### 4.3 六代理团队
 
 - **RootCauseAgent**（亲读装配段）："PatchGen-LLM，端到端安全补丁流水线的自主组件"系统提示；GPT-4.1(temp=1, max_tokens=20000)+双回退；带 `understand_code_snippet` 等工具按需索取代码。
-- **ContextRetrieverAgent**（1378 行，结构亲读）：FindTests（找项目测试以保补丁不破坏行为）+ 初始片段请求 + 按需检索三个节点；CodeSnippetManager 管理片段状态。
-- **SWEAgent**：PATCH_STRATEGY（高层方案，"不给具体代码改动"）与 CREATE_PATCH 两节点分离——策略与实施解耦。
-- **QEAgent**（586 行）：纯确定性节点——build_patch/run_pov/run_tests，把执行结果回填 PatchAttempt。
+- **ContextRetrieverAgent**（1378 行全文亲读）——FindTests + 初始片段 + 按需检索三节点：
+  - **双层 LLM 经济**：片段检索 ReAct/重复判定/初始请求/相关性过滤全用 GPT-4.1-mini（cheap_llm），找测试用 GPT-4.1；各自挂 [Claude-4.5-Sonnet, Gemini-Pro] 回退阶梯——按代理角色做成本分层。
+  - 片段检索 ReAct（ls/grep/get_lines/cat/get_function/get_type/get_callers/get_callees/track_snippet/think 十工具）：系统提示是 SWE-agent 式"没解决别停"+"每次工具调用前必须规划、事后必须反思"，且明确**反工具依赖偏置**（"不要全程只靠函数调用，这会损害你的洞察力"）；`track_snippet` 契约是"记录已验证的代码——不是用来发现或搜索"；**行号请求自动 ±5 行缓冲**（容忍 LLM 小错）；`think` 工具是无操作回声（把推理弹回去并催促调 get_function/track_snippet——thinking scratchpad 做成工具）。
+  - **初始上下文两波引导**：第一波**项目感知的栈帧过滤**（跳过 __libc_start_main/__gmon_start__/_start；compiler-rt 帧除非项目就是 llvm-project 否则跳过；glibc 动态库帧除非项目就是 glibc 否则跳过）→ 每栈前 n_initial_stackframes 帧 → 按 (函数,文件) 分组去重行号 → 生成自然语言请求并行检索；第二波 cheap-LLM 从"栈+已得片段"补充请求，提示词是**极简主义负面清单**（只准要"漏洞确切发生点/确切失败的安全检查/确切被破坏的变量"，明文禁止辅助函数/调用方/背景/程序流代码），先 1-10 打相关度再只输出 essentials 的 `<request>`。
+  - **片段级去重闸**：每次检索前先过 `<is_satisfied>` 判定（四准则：精确包含/等价或超集/完全可见/"要求全部版本时部分满足不算"），解析异常偏向"未满足"（宁可重查）；检索后每个片段再过并行 `<is_relevant>` 过滤（"不确定视为相关"）。retrieve_context 完成后 `goto=state.prev_node`——**返回调用方路由**，谁要的上下文还给谁。
+  - **FindTests 三级查找**：oss-fuzz `projects/<name>/test.sh` 存在即用 → **Redis custom_test_map 哈希（task_id→指令，发现一次跨 run 永久复用——机构记忆）** → 找测试代理。代理带**自验证工具 `test_instructions`**：在干净副本上实际执行构建+测试指令，**双重验证**（进程成功 且 LLM 裁判 `<are_valid>`，输出从**头部截断保留末尾**——测试结果通常在最后几行），失败则工具返回"你不能停在这，必须修好再调我"；外层最多 10 轮、每轮追加"你还没成功调过 test_instructions，请更努力"的加压 HumanMessage；整体 30 分钟墙钟超时（future.result(timeout)）优雅降级（无测试继续跑）。`sh` 工具把命令写成临时 bash 文件 docker 挂载执行（文件挂载而非字符串注入）。
+- **SWEAgent**（840 行全文亲读）——PATCH_STRATEGY 与 CREATE_PATCH 两节点：
+  - **AI-prefill 强制格式**：两个提示模板都以 `("ai", "<patch_planning>")` / `("ai", "<patch_development_process>")` 预填助手消息开头——与 vulnhuntr 的 JSON prefill 同一技巧的 XML 版，迫使模型在预期标签内续写。
+  - 策略提示（ReAct，带 understand_code_snippet 工具）：强制列 2-4 个备选方案带 pros/cons、"优先最简但可靠的方案（例如能拿到引入该漏洞的补丁就直接 revert）"、**只出策略不出 diff**；`<request_information>` 索取上下文协议（解析后经 reflection 路由回 context_retriever）。
+  - 补丁提示：old_code/new_code 各带**前后至少 5 行上下文锚**；只准改 `<can_patch>true</can_patch>` 片段；禁止 TODO/占位符；"只用你确认存在于代码库的代码"。重试提示仅在**上次部分成功**时注入（description+patch+status+failure_category+failure_analysis 五元组，"不要照抄上个补丁"）。
+  - **物化管道**（LLM 文本→可应用 diff）：XML 解析（patch 块→file_path/identifier+old/new 对）→ CodeSnippetKey 模糊解析（先精确 identifier 匹配，再 difflib.SequenceMatcher 对路径相似度≥0.8）→ 双重包含校验（片段在文件中、old_code 在片段中；TODO 注释承认缺模糊匹配）→ 字符串替换 → **临时文件跑 `git diff --no-index --binary` 生成标准 diff 再改写路径**（git 本身当 diff 引擎）→ 多补丁拼接。CREATION_FAILED / **DUPLICATED（与历史补丁逐字比对显式去重）** 双失败态进反思。
+  - 模型阶梯 GPT-4.1(temp=1, 20k)→Claude-4.5→Gemini（ReAct 版逐模型构建再 with_fallbacks）；GraphRecursionError/ValidationError/空消息一律优雅转反思；摘要链失败回退全文。
+- **QEAgent**（586 行全文亲读）——**零 LLM 调用的纯确定性验证节点**（"QE"是 AIxCC 角色命名，非智能体）：
+  - **sanitizer 并行构建 + 首败即撤**：get_executor_for_config 并行各 sanitizer 构建，任一失败→取消剩余 future + **清理所有已成功构建的挑战目录**（磁盘产物随状态回滚）；**AArch64 豁免**（该架构部分 sanitizer 天然构建失败，放行）；成功目录按 sanitizer 缓存复用给 PoV 阶段。
+  - **PoV 变体放大（防过拟合）**：从 CrashDir 按 (pov_token × sanitizer) 拉取崩溃语料库变体（上限 max_pov_variants_per_token_sanitizer，get_remote=True 拉远端），**原始 PoV 移到队首优先测**——补丁必须扛住同 token 的变体崩溃。
+  - run_pov：并行执行、**任一崩溃即短路失败**；墙钟预算带 run_once 细则（超时但已有≥1 个 PoV 成功跑过→乐观收尾继续）；ChallengeTaskError 一律按 did_crash=True 保守处理（基建故障≠已修复）；**一个 PoV 都没跑成→路由回 ROOT_CAUSE_ANALYSIS 而非反思**（根因可能本身就错）。
+  - run_tests：测试指令以 /tmp/test.sh 挂载进 docker 在干净副本执行；**无测试指令时 tests_passed=True（"直接接受补丁"——文档化的宽松闸）**。
 - **ReflectionAgent**（亲读提示词全文+装配+解析）——**系统的路由大脑**：
   - 提示词定位"安全聚焦的反思引擎，任务是分析补丁为何失败并决定下一步由谁接手"；**第一分析步骤就是 Loop Detection**："数每个组件近期被调次数、同一失败类型 ≥3 次=循环风险、组件间振荡无进展——检测到循环必须换组件"（防死循环写进第一条）；
   - 12 步分析清单（失败上下文摘要/失败分类/部分成功识别/跨尝试模式…）+ `<analysis_breakdown>` 思考区 + `<reflection_result>` 结构化输出（decision+result）；
@@ -116,6 +130,11 @@ buttercup/
 6. **多 provider 回退链**（GPT→Claude→Gemini）+ 20+ 模型枚举 + 预算控制 + dev 模式 LangChain 缓存零成本复放。
 7. **可靠队列服务化**：Redis 队列 + ack + 任务过期感知 + 服务循环——竞赛时限下的工程可靠性。
 8. Langfuse+OTel 全链路遥测与 .claude/skills 开发技能——**生产与开发两端的可观测性同权**。
+9. **Redis 跨 run 测试指令记忆**（custom_test_map：task_id→指令）：发现一次永久复用——慢资产的一次性发现成本摊销到整个竞赛周期。
+10. **PoV 变体放大**：按 token×sanitizer 从崩溃语料库拉变体、原始 PoV 排队首优先——防补丁对单一崩溃过拟合。
+11. **AI-prefill XML**（提示模板以 `("ai","<patch_planning>")` 预填助手消息）：vulnhuntr JSON prefill 的 XML 版。
+12. **git diff --no-index 当 diff 引擎** + 行号请求 ±5 行缓冲 + 0.8 路径相似度模糊键解析——LLM 文本到可应用 patch 的完整落地管道。
+13. **双层 LLM 经济**（mini 干检索/判定、4.1 干重活、QE 零 LLM）——按角色做成本与可靠性分层；`<request_information>` 上下文索取协议让策略代理能主动要代码。
 
 ## 6. 局限与改进点
 
@@ -123,6 +142,7 @@ buttercup/
 - 复杂度重（76k 行、十余组件、Redis/Docker/竞赛 API 依赖链），脱离 AIxCC 场景复用成本高。
 - fuzzer/program-model 组件未逐行审计（见第 8 节）；反思提示的组件路由表是硬编码四选一，扩展新代理需同步多处。
 - LLM 集中在 OpenAI 系默认（GPT-4.1），Claude/Gemini 仅回退——模型角色分工不如 strix/pentagi 细。
+- 补读发现的宽松点：old_code 与片段的匹配是纯字符串包含（代码内 TODO 承认需模糊匹配）；无测试指令时直接接受补丁；找测试代理 30 分钟超时后无测试继续——三处都是"验证闸在信息缺失时向通过方向倾斜"。
 
 ## 7. 与其他已审计项目的对比
 
@@ -146,7 +166,10 @@ buttercup/
 | `patcher/src/.../agents/common.py` | ✅ 亲读 | 状态模型/reducer/九态枚举（1-260 精读） |
 | `patcher/src/.../agents/reflection.py` | ✅ 亲读 | 提示词全文+路由表+解析器 |
 | `patcher/src/.../agents/rootcause.py` | ✅ 部分 | 提示词头+装配+工具签名 |
-| `patcher/src/.../agents/context_retriever.py` `swe.py` `qe.py` `input_processing.py` | ⬜ 部分 | 结构与职责经 leader/common 调用面亲读确认 |
+| `patcher/src/.../agents/context_retriever.py` | ✅ 亲读全文 | 1378/1378（补读）：两波初始引导/去重闸/FindTests 三级+自验证工具/双层 LLM 经济 |
+| `patcher/src/.../agents/swe.py` | ✅ 亲读全文 | 840/840（补读）：AI-prefill XML/策略-实施分离/物化管道/DUPLICATED 去重 |
+| `patcher/src/.../agents/qe.py` | ✅ 亲读全文 | 586/586（补读）：sanitizer 并行+首败撤/AArch64 豁免/PoV 变体放大/run_once 细则 |
+| `patcher/src/.../agents/input_processing.py` | ⬜ 部分 | 结构与职责经 leader/common 调用面亲读确认 |
 | `seed-gen/src/.../prompt/seed_init.py` | ✅ 亲读 | 种子生成提示 |
 | `common/src/.../llm.py` | ✅ 亲读 | 20+ 模型枚举 |
 | `orchestrator/src/.../scheduler/submissions.py` | ✅ 部分 | 提交状态机结构（1813 行） |
