@@ -40,7 +40,7 @@
 | [`SanMuzZzZz/LuaN1aoAgent`](https://github.com/SanMuzZzZz/LuaN1aoAgent) | `repos/agents/LuaN1aoAgent` | ✅ | 已完成 | [docs/audits/SanMuzZzZz-LuaN1aoAgent.md](docs/audits/SanMuzZzZz-LuaN1aoAgent.md) |
 | [`splx-ai/agentic-radar`](https://github.com/splx-ai/agentic-radar) | `repos/agents/agentic-radar` | ✅ | 已完成 | [docs/audits/splx-ai-agentic-radar.md](docs/audits/splx-ai-agentic-radar.md) |
 | [`ghostsecurity/reaper`](https://github.com/ghostsecurity/reaper) | `repos/agents/reaper` | ✅ | 已完成 | [docs/audits/ghostsecurity-reaper.md](docs/audits/ghostsecurity-reaper.md) |
-| [`PentesterFlow/agent`](https://github.com/PentesterFlow/agent) | `repos/agents/agent` | ✅ | 未开始 |  |
+| [`PentesterFlow/agent`](https://github.com/PentesterFlow/agent) | `repos/agents/agent` | ✅ | 已完成 | [docs/audits/PentesterFlow-agent.md](docs/audits/PentesterFlow-agent.md) |
 | [`xalgord/xalgorix`](https://github.com/xalgord/xalgorix) | `repos/agents/xalgorix` | ✅ | 已完成 | [docs/audits/xalgord-xalgorix.md](docs/audits/xalgord-xalgorix.md) |
 | [`ASCIT31/Dark-Moon`](https://github.com/ASCIT31/Dark-Moon) | `repos/agents/Dark-Moon` | ✅ | 已完成 | [docs/audits/ASCIT31-Dark-Moon.md](docs/audits/ASCIT31-Dark-Moon.md) |
 | [`verialabs/ctf-agent`](https://github.com/verialabs/ctf-agent) | `repos/agents/ctf-agent` | ✅ | 已完成 | [docs/audits/verialabs-ctf-agent.md](docs/audits/verialabs-ctf-agent.md) |
