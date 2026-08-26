@@ -35,7 +35,7 @@
 | [`utkusen/promptmap`](https://github.com/utkusen/promptmap) | `repos/agents/promptmap` | ✅ | 已完成 | [docs/audits/utkusen-promptmap.md](docs/audits/utkusen-promptmap.md) |
 | [`CyberStrikeus/CyberStrike`](https://github.com/CyberStrikeus/CyberStrike) | `repos/agents/CyberStrike` | ✅ | 未开始 |  |
 | [`ipa-lab/hackingBuddyGPT`](https://github.com/ipa-lab/hackingBuddyGPT) | `repos/agents/hackingBuddyGPT` | ✅ | 已完成 | [docs/audits/ipa-lab-hackingBuddyGPT.md](docs/audits/ipa-lab-hackingBuddyGPT.md) |
-| [`bugbasesecurity/pentest-copilot`](https://github.com/bugbasesecurity/pentest-copilot) | `repos/agents/pentest-copilot` | ✅ | 未开始 |  |
+| [`bugbasesecurity/pentest-copilot`](https://github.com/bugbasesecurity/pentest-copilot) | `repos/agents/pentest-copilot` | ✅ | 已完成 | [docs/audits/bugbasesecurity-pentest-copilot.md](docs/audits/bugbasesecurity-pentest-copilot.md) |
 | [`berylliumsec/nebula`](https://github.com/berylliumsec/nebula) | `repos/agents/nebula` | ✅ | 未开始 |  |
 | [`SanMuzZzZz/LuaN1aoAgent`](https://github.com/SanMuzZzZz/LuaN1aoAgent) | `repos/agents/LuaN1aoAgent` | ✅ | 未开始 |  |
 | [`splx-ai/agentic-radar`](https://github.com/splx-ai/agentic-radar) | `repos/agents/agentic-radar` | ✅ | 已完成 | [docs/audits/splx-ai-agentic-radar.md](docs/audits/splx-ai-agentic-radar.md) |
