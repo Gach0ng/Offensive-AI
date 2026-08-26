@@ -63,7 +63,7 @@
 | [`andreashappe/cochise`](https://github.com/andreashappe/cochise) | `repos/agents/cochise` | ✅ | 未开始 |  |
 | [`arthurgervais/mapta`](https://github.com/arthurgervais/mapta) | `repos/agents/mapta` | ✅ | 未开始 |  |
 | [`vikramrajkumarmajji/AI-VAPT`](https://github.com/vikramrajkumarmajji/AI-VAPT) | `repos/agents/AI-VAPT` | ✅ | 未开始 |  |
-| [`amazon-science/Cyber-Zero`](https://github.com/amazon-science/Cyber-Zero) | `repos/agents/Cyber-Zero` | ✅ | 未开始 |  |
+| [`amazon-science/Cyber-Zero`](https://github.com/amazon-science/Cyber-Zero) | `repos/agents/Cyber-Zero` | ✅ | 已完成 | [docs/audits/Cyber-Zero.md](docs/audits/Cyber-Zero.md) |
 
 ## 二、DARPA AIxCC 2025 决赛 CRS（aixcc）
 
