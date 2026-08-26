@@ -44,7 +44,7 @@
 | [`xalgord/xalgorix`](https://github.com/xalgord/xalgorix) | `repos/agents/xalgorix` | ✅ | 已完成 | [docs/audits/xalgord-xalgorix.md](docs/audits/xalgord-xalgorix.md) |
 | [`ASCIT31/Dark-Moon`](https://github.com/ASCIT31/Dark-Moon) | `repos/agents/Dark-Moon` | ✅ | 已完成 | [docs/audits/ASCIT31-Dark-Moon.md](docs/audits/ASCIT31-Dark-Moon.md) |
 | [`verialabs/ctf-agent`](https://github.com/verialabs/ctf-agent) | `repos/agents/ctf-agent` | ✅ | 已完成 | [docs/audits/verialabs-ctf-agent.md](docs/audits/verialabs-ctf-agent.md) |
-| [`westonbrown/Cyber-AutoAgent`](https://github.com/westonbrown/Cyber-AutoAgent) | `repos/agents/Cyber-AutoAgent` | ✅ | 未开始 |  |
+| [`westonbrown/Cyber-AutoAgent`](https://github.com/westonbrown/Cyber-AutoAgent) | `repos/agents/Cyber-AutoAgent` | ✅ | 已完成 | [docs/audits/westonbrown-Cyber-AutoAgent.md](docs/audits/westonbrown-Cyber-AutoAgent.md) |
 | [`crond-jaist/AutoPentest-DRL`](https://github.com/crond-jaist/AutoPentest-DRL) | `repos/agents/AutoPentest-DRL` | ✅ | 已完成 | [docs/audits/crond-jaist-AutoPentest-DRL.md](docs/audits/crond-jaist-AutoPentest-DRL.md) |
 | [`0ca/BoxPwnr`](https://github.com/0ca/BoxPwnr) | `repos/agents/BoxPwnr` | ✅ | 已完成 | [docs/audits/0ca-BoxPwnr.md](docs/audits/0ca-BoxPwnr.md) |
 | [`ARCANGEL0/EVA`](https://github.com/ARCANGEL0/EVA) | `repos/agents/EVA` | ✅ | 已完成 | [docs/audits/ARCANGEL0-EVA.md](docs/audits/ARCANGEL0-EVA.md) |
