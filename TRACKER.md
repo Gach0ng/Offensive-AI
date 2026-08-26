@@ -32,7 +32,7 @@
 | [`trailofbits/buttercup`](https://github.com/trailofbits/buttercup) | `repos/agents/buttercup` | ✅ | 已完成 | [docs/audits/trailofbits-buttercup.md](docs/audits/trailofbits-buttercup.md) |
 | [`Gowtham-Darkseid/AutoPentestX`](https://github.com/Gowtham-Darkseid/AutoPentestX) | `repos/agents/AutoPentestX` | ✅ | 已完成 | [docs/audits/Gowtham-Darkseid-AutoPentestX.md](docs/audits/Gowtham-Darkseid-AutoPentestX.md) |
 | [`0xSteph/pentest-ai`](https://github.com/0xSteph/pentest-ai) | `repos/agents/pentest-ai` | ✅ | 未开始 |  |
-| [`utkusen/promptmap`](https://github.com/utkusen/promptmap) | `repos/agents/promptmap` | ✅ | 未开始 |  |
+| [`utkusen/promptmap`](https://github.com/utkusen/promptmap) | `repos/agents/promptmap` | ✅ | 已完成 | [docs/audits/utkusen-promptmap.md](docs/audits/utkusen-promptmap.md) |
 | [`CyberStrikeus/CyberStrike`](https://github.com/CyberStrikeus/CyberStrike) | `repos/agents/CyberStrike` | ✅ | 未开始 |  |
 | [`ipa-lab/hackingBuddyGPT`](https://github.com/ipa-lab/hackingBuddyGPT) | `repos/agents/hackingBuddyGPT` | ✅ | 已完成 | [docs/audits/ipa-lab-hackingBuddyGPT.md](docs/audits/ipa-lab-hackingBuddyGPT.md) |
 | [`bugbasesecurity/pentest-copilot`](https://github.com/bugbasesecurity/pentest-copilot) | `repos/agents/pentest-copilot` | ✅ | 未开始 |  |
