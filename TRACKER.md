@@ -18,7 +18,7 @@
 | [`NVIDIA/garak`](https://github.com/NVIDIA/garak) | `repos/agents/garak` | ✅ | 已完成 | [docs/audits/NVIDIA-garak.md](docs/audits/NVIDIA-garak.md) |
 | [`OWASP/Nettacker`](https://github.com/OWASP/Nettacker) | `repos/agents/Nettacker` | ✅ | 已完成 | [docs/audits/OWASP-Nettacker.md](docs/audits/OWASP-Nettacker.md) |
 | [`Ed1s0nZ/CyberStrikeAI`](https://github.com/Ed1s0nZ/CyberStrikeAI) | `repos/agents/CyberStrikeAI` | ✅ | 未开始 |  |
-| [`elder-plinius/T3MP3ST`](https://github.com/elder-plinius/T3MP3ST) | `repos/agents/T3MP3ST` | ✅ | 未开始 |  |
+| [`elder-plinius/T3MP3ST`](https://github.com/elder-plinius/T3MP3ST) | `repos/agents/T3MP3ST` | ✅ | 已完成 | [docs/audits/elder-plinius-T3MP3ST.md](docs/audits/elder-plinius-T3MP3ST.md) |
 | [`microsoft/PyRIT`](https://github.com/microsoft/PyRIT) | `repos/agents/PyRIT` | ✅ | 已完成 | [docs/audits/microsoft-PyRIT.md](docs/audits/microsoft-PyRIT.md) |
 | [`GH05TCREW/pentestagent`](https://github.com/GH05TCREW/pentestagent) | `repos/agents/pentestagent` | ✅ | 未开始 |  |
 | [`protectai/vulnhuntr`](https://github.com/protectai/vulnhuntr) | `repos/agents/vulnhuntr` | ✅ | 已完成 | [docs/audits/protectai-vulnhuntr.md](docs/audits/protectai-vulnhuntr.md) |
