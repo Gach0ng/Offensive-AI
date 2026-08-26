@@ -37,7 +37,7 @@
 | [`ipa-lab/hackingBuddyGPT`](https://github.com/ipa-lab/hackingBuddyGPT) | `repos/agents/hackingBuddyGPT` | ✅ | 已完成 | [docs/audits/ipa-lab-hackingBuddyGPT.md](docs/audits/ipa-lab-hackingBuddyGPT.md) |
 | [`bugbasesecurity/pentest-copilot`](https://github.com/bugbasesecurity/pentest-copilot) | `repos/agents/pentest-copilot` | ✅ | 已完成 | [docs/audits/bugbasesecurity-pentest-copilot.md](docs/audits/bugbasesecurity-pentest-copilot.md) |
 | [`berylliumsec/nebula`](https://github.com/berylliumsec/nebula) | `repos/agents/nebula` | ✅ | 已完成 | [docs/audits/berylliumsec-nebula.md](docs/audits/berylliumsec-nebula.md) |
-| [`SanMuzZzZz/LuaN1aoAgent`](https://github.com/SanMuzZzZz/LuaN1aoAgent) | `repos/agents/LuaN1aoAgent` | ✅ | 未开始 |  |
+| [`SanMuzZzZz/LuaN1aoAgent`](https://github.com/SanMuzZzZz/LuaN1aoAgent) | `repos/agents/LuaN1aoAgent` | ✅ | 已完成 | [docs/audits/SanMuzZzZz-LuaN1aoAgent.md](docs/audits/SanMuzZzZz-LuaN1aoAgent.md) |
 | [`splx-ai/agentic-radar`](https://github.com/splx-ai/agentic-radar) | `repos/agents/agentic-radar` | ✅ | 已完成 | [docs/audits/splx-ai-agentic-radar.md](docs/audits/splx-ai-agentic-radar.md) |
 | [`ghostsecurity/reaper`](https://github.com/ghostsecurity/reaper) | `repos/agents/reaper` | ✅ | 已完成 | [docs/audits/ghostsecurity-reaper.md](docs/audits/ghostsecurity-reaper.md) |
 | [`PentesterFlow/agent`](https://github.com/PentesterFlow/agent) | `repos/agents/agent` | ✅ | 未开始 |  |
