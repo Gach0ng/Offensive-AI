@@ -48,7 +48,7 @@
 | [`crond-jaist/AutoPentest-DRL`](https://github.com/crond-jaist/AutoPentest-DRL) | `repos/agents/AutoPentest-DRL` | ✅ | 未开始 |  |
 | [`0ca/BoxPwnr`](https://github.com/0ca/BoxPwnr) | `repos/agents/BoxPwnr` | ✅ | 已完成 | [docs/audits/0ca-BoxPwnr.md](docs/audits/0ca-BoxPwnr.md) |
 | [`ARCANGEL0/EVA`](https://github.com/ARCANGEL0/EVA) | `repos/agents/EVA` | ✅ | 已完成 | [docs/audits/ARCANGEL0-EVA.md](docs/audits/ARCANGEL0-EVA.md) |
-| [`m-sec-org/BreachWeave`](https://github.com/m-sec-org/BreachWeave) | `repos/agents/BreachWeave` | ✅ | 未开始 |  |
+| [`m-sec-org/BreachWeave`](https://github.com/m-sec-org/BreachWeave) | `repos/agents/BreachWeave` | ✅ | 已完成 | [docs/audits/m-sec-org-BreachWeave.md](docs/audits/m-sec-org-BreachWeave.md) |
 | [`SHAdd0WTAka/Zen-Ai-Pentest`](https://github.com/SHAdd0WTAka/Zen-Ai-Pentest) | `repos/agents/Zen-Ai-Pentest` | ✅ | 已完成 | [docs/audits/SHAdd0WTAka-Zen-Ai-Pentest.md](docs/audits/SHAdd0WTAka-Zen-Ai-Pentest.md) |
 | [`transilienceai/communitytools`](https://github.com/transilienceai/communitytools) | `repos/agents/communitytools` | ✅ | 已完成 | [docs/audits/transilienceai-communitytools.md](docs/audits/transilienceai-communitytools.md) |
 | [`aielte-research/HackSynth`](https://github.com/aielte-research/HackSynth) | `repos/agents/HackSynth` | ✅ | 已完成 | [docs/audits/aielte-research-HackSynth.md](docs/audits/aielte-research-HackSynth.md) |
