@@ -53,7 +53,7 @@
 | [`transilienceai/communitytools`](https://github.com/transilienceai/communitytools) | `repos/agents/communitytools` | ✅ | 已完成 | [docs/audits/transilienceai-communitytools.md](docs/audits/transilienceai-communitytools.md) |
 | [`aielte-research/HackSynth`](https://github.com/aielte-research/HackSynth) | `repos/agents/HackSynth` | ✅ | 已完成 | [docs/audits/aielte-research-HackSynth.md](docs/audits/aielte-research-HackSynth.md) |
 | [`simon-p-j-r/LLM4Pentest`](https://github.com/simon-p-j-r/LLM4Pentest) | `repos/agents/LLM4Pentest` | ✅ | 已完成 | [docs/audits/simon-p-j-r-LLM4Pentest.md](docs/audits/simon-p-j-r-LLM4Pentest.md) |
-| [`xoxruns/deadend-cli`](https://github.com/xoxruns/deadend-cli) | `repos/agents/deadend-cli` | ✅ | 未开始 |  |
+| [`xoxruns/deadend-cli`](https://github.com/xoxruns/deadend-cli) | `repos/agents/deadend-cli` | ✅ | 已完成 | [docs/audits/xoxruns-deadend-cli.md](docs/audits/xoxruns-deadend-cli.md) |
 | [`yz9yt/BugTrace-AI`](https://github.com/yz9yt/BugTrace-AI) | `repos/agents/BugTrace-AI` | ✅ | 已完成 | [docs/audits/yz9yt-BugTrace-AI.md](docs/audits/yz9yt-BugTrace-AI.md) |
 | [`GitHubSecurityLab/seclab-taskflow-agent`](https://github.com/GitHubSecurityLab/seclab-taskflow-agent) | `repos/agents/seclab-taskflow-agent` | ✅ | 未开始 |  |
 | [`KHenryAegis/VulnBot`](https://github.com/KHenryAegis/VulnBot) | `repos/agents/VulnBot` | ✅ | 已完成 | [docs/audits/KHenryAegis-VulnBot.md](docs/audits/KHenryAegis-VulnBot.md) |
