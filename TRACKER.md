@@ -59,7 +59,7 @@
 | [`KHenryAegis/VulnBot`](https://github.com/KHenryAegis/VulnBot) | `repos/agents/VulnBot` | ✅ | 已完成 | [docs/audits/KHenryAegis-VulnBot.md](docs/audits/KHenryAegis-VulnBot.md) |
 | [`chainreactors/tinyctfer`](https://github.com/chainreactors/tinyctfer) | `repos/agents/tinyctfer` | ✅ | 已完成 | [docs/audits/chainreactors-tinyctfer.md](docs/audits/chainreactors-tinyctfer.md) |
 | [`NYU-LLM-CTF/nyuctf_agents`](https://github.com/NYU-LLM-CTF/nyuctf_agents) | `repos/agents/nyuctf_agents` | ✅ | 已完成 | [docs/audits/NYU-LLM-CTF-nyuctf_agents.md](docs/audits/NYU-LLM-CTF-nyuctf_agents.md) |
-| [`antoninoLorenzo/AI-OPS`](https://github.com/antoninoLorenzo/AI-OPS) | `repos/agents/AI-OPS` | ✅ | 未开始 |  |
+| [`antoninoLorenzo/AI-OPS`](https://github.com/antoninoLorenzo/AI-OPS) | `repos/agents/AI-OPS` | ✅ | 已完成 | [docs/audits/antoninoLorenzo-AI-OPS.md](docs/audits/antoninoLorenzo-AI-OPS.md) |
 | [`andreashappe/cochise`](https://github.com/andreashappe/cochise) | `repos/agents/cochise` | ✅ | 已完成 | [docs/audits/andreashappe-cochise.md](docs/audits/andreashappe-cochise.md) |
 | [`arthurgervais/mapta`](https://github.com/arthurgervais/mapta) | `repos/agents/mapta` | ✅ | 未开始 |  |
 | [`vikramrajkumarmajji/AI-VAPT`](https://github.com/vikramrajkumarmajji/AI-VAPT) | `repos/agents/AI-VAPT` | ✅ | 未开始 |  |
