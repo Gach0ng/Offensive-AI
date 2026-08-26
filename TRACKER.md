@@ -42,7 +42,7 @@
 | [`ghostsecurity/reaper`](https://github.com/ghostsecurity/reaper) | `repos/agents/reaper` | ✅ | 已完成 | [docs/audits/ghostsecurity-reaper.md](docs/audits/ghostsecurity-reaper.md) |
 | [`PentesterFlow/agent`](https://github.com/PentesterFlow/agent) | `repos/agents/agent` | ✅ | 未开始 |  |
 | [`xalgord/xalgorix`](https://github.com/xalgord/xalgorix) | `repos/agents/xalgorix` | ✅ | 已完成 | [docs/audits/xalgord-xalgorix.md](docs/audits/xalgord-xalgorix.md) |
-| [`ASCIT31/Dark-Moon`](https://github.com/ASCIT31/Dark-Moon) | `repos/agents/Dark-Moon` | ✅ | 未开始 |  |
+| [`ASCIT31/Dark-Moon`](https://github.com/ASCIT31/Dark-Moon) | `repos/agents/Dark-Moon` | ✅ | 已完成 | [docs/audits/ASCIT31-Dark-Moon.md](docs/audits/ASCIT31-Dark-Moon.md) |
 | [`verialabs/ctf-agent`](https://github.com/verialabs/ctf-agent) | `repos/agents/ctf-agent` | ✅ | 未开始 |  |
 | [`westonbrown/Cyber-AutoAgent`](https://github.com/westonbrown/Cyber-AutoAgent) | `repos/agents/Cyber-AutoAgent` | ✅ | 未开始 |  |
 | [`crond-jaist/AutoPentest-DRL`](https://github.com/crond-jaist/AutoPentest-DRL) | `repos/agents/AutoPentest-DRL` | ✅ | 未开始 |  |
