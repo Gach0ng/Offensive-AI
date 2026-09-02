@@ -136,7 +136,7 @@ strix 的 tool_use_behavior 生命周期协议（只有 finish_scan/agent_finish
 
 ## 6. 执行与沙箱（速览，详见 13 条共性 08）
 
-一次性容器+只读挂载（shannon Wolfi 非 root、strix 每 scan 一个 Kali 容器、Cairn 每项目一容器）> rootless OCI+审批暂停（nebula，审批期间保留已耗成本记账）> 常驻容器（BoxPwnr/ctf-agent）> 本机直执行（多数，靠提示词兜底——反面）。平台级必配四件：容器隔离、出网白名单 fail-closed（T3MP3ST scopeViolation）、审批暂停（nebula）、密钥 regex 脱敏入库（pentagi）。
+一次性容器+只读挂载（shannon Wolfi 非 root、strix 每 scan 一个 Kali 容器、Cairn 每项目一容器）> rootless OCI+审批暂停（nebula，审批期间保留已耗成本记账）> 常驻容器（BoxPwnr/ctf-agent）> 本机直执行（多数，靠提示词兜底——反面）。平台级必配四件：容器隔离、出网白名单 fail-closed（T3MP3ST scopeViolation）、审批暂停（nebula）、敏感数据令牌化（Dark-Moon PrivacyVault 可逆令牌化；原记 pentagi"密钥 regex 脱敏入库"经第二卷复核未找到，作废——见 v2 §8 更正）。
 
 ---
 
@@ -159,7 +159,7 @@ strix 的 tool_use_behavior 生命周期协议（只有 finish_scan/agent_finish
 
 ### 7.3 工具面：MCP 已是对的选择，补三件事
 
-mcp_server 保留并扩展为唯一工具面（13 仓同款选择）：① 上报类工具全部 schema 校验+必填（strix 10 必填+CVSS 服务端算分——分数永远不让模型自报）；② 解析/校验失败错误回喂（分水岭特征）；③ 工具输出三重闸（截断→溢写文件→压缩）+ 密钥 regex 脱敏（pentagi）。
+mcp_server 保留并扩展为唯一工具面（13 仓同款选择）：① 上报类工具全部 schema 校验+必填（strix 10 必填+CVSS 服务端算分——分数永远不让模型自报）；② 解析/校验失败错误回喂（分水岭特征）；③ 工具输出三重闸（截断→溢写文件→压缩，strix）。
 
 ### 7.4 可靠性：按第 5 节五件套配齐，优先级为预算>续跑>缓存>成本>重试
 
